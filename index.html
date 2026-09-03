@@ -373,12 +373,14 @@
       </div>
 
       <!--
-        Formulaire sans back-end : à l'envoi, il ouvre le client mail avec
-        le message pré-rempli. Pour recevoir les messages sans client mail,
-        crée un formulaire gratuit sur https://formspree.io et remplace la
-        gestion JS par :  <form action="https://formspree.io/f/TON_ID" method="POST">
+        Formulaire envoyé directement via Web3Forms (api.web3forms.com) :
+        aucun back-end à héberger, les messages arrivent par email.
       -->
       <form class="contact-form reveal" id="contactForm" novalidate>
+        <input type="hidden" name="access_key" value="3c6ca086-5eb5-4f0b-a130-21ca62d5a54f" />
+        <input type="hidden" name="subject" value="Nouveau message depuis le site" />
+        <input type="text" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
         <div class="field">
           <label for="cf-name">Nom</label>
           <input type="text" id="cf-name" name="name" autocomplete="name" required />

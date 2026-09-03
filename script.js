@@ -51,23 +51,22 @@
     revealEls.forEach((el) => io.observe(el));
   }
 
-  /* -------- Formulaire de contact (sans back-end) --------
-     Ouvre le client mail avec le message pré-rempli.
-     Pour recevoir les messages directement (sans client mail),
-     crée un formulaire sur https://formspree.io et remplace ce bloc
-     par un <form action="https://formspree.io/f/TON_ID" method="POST">.
+  /* -------- Formulaire de contact --------
+     Envoi direct via Web3Forms (api.web3forms.com) : aucun back-end à
+     héberger, les messages arrivent par email. La clé "access_key" dans
+     le formulaire identifie où les messages doivent être livrés.
   */
-  const DEST_EMAIL = "eloi.dupasquier@proton.me";
   const form = document.getElementById("contactForm");
   const note = document.getElementById("formNote");
 
   if (form) {
-    form.addEventListener("submit", (e) => {
+    const submitBtn = form.querySelector("button[type='submit']");
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const name = form.querySelector("#cf-name").value.trim();
       const email = form.querySelector("#cf-email").value.trim();
-      const type = form.querySelector("#cf-type").value;
       const message = form.querySelector("#cf-message").value.trim();
 
       if (!name || !email || !message) {
@@ -75,21 +74,30 @@
         return;
       }
 
-      const subject = `Nouveau projet — ${type} · ${name}`;
-      const body =
-        `Nom : ${name}\n` +
-        `Email : ${email}\n` +
-        `Type de projet : ${type}\n\n` +
-        `${message}\n`;
+      if (submitBtn) submitBtn.disabled = true;
+      if (note) note.textContent = "Envoi en cours…";
 
-      const mailto = `mailto:${DEST_EMAIL}?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(body)}`;
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        const result = await response.json();
 
-      window.location.href = mailto;
-
-      if (note) {
-        note.textContent = "Votre logiciel de messagerie va s'ouvrir. À très vite !";
+        if (result.success) {
+          form.reset();
+          if (note) note.textContent = "Message envoyé ! Je vous réponds sous 24 à 48 h.";
+        } else {
+          throw new Error(result.message || "Échec de l'envoi");
+        }
+      } catch (err) {
+        if (note) {
+          note.textContent =
+            "L'envoi a échoué. Vous pouvez aussi m'écrire directement à eloi.dupasquier@proton.me.";
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
       }
     });
   }

@@ -32,7 +32,7 @@ Tout est regroupé pour être facile à retrouver :
 
 | Élément | Où | Remarque |
 |---|---|---|
-| **Adresse email** | `index.html` (section contact) + `script.js` (`DEST_EMAIL`) | Actuellement `eloi.dupasquier@proton.me` — à changer aux deux endroits si besoin |
+| **Adresse email** | `index.html` (section contact) + [web3forms.com](https://web3forms.com) (clé d'accès) | Le texte affiché est `eloi.dupasquier@proton.me` ; la boîte qui reçoit réellement les messages est celle liée à la clé Web3Forms |
 | **Téléphone** | non affiché | Volontairement retiré du site public. À ajouter dans la section contact si tu le souhaites |
 | **Réalisations** | `index.html`, section `#realisations` | Remplace les 2 projets par tes vraies réalisations (titre, description, technos, année). Ajoute des captures si tu veux |
 | **Mentions légales** | `index.html`, footer | Le SIRET et le lien « Mentions légales » sont des espaces à compléter (obligatoire pour une micro-entreprise) |
@@ -40,22 +40,18 @@ Tout est regroupé pour être facile à retrouver :
 
 ## Le formulaire de contact
 
-Par défaut, le formulaire **ouvre ton logiciel de messagerie** avec le message
-pré-rempli (aucun serveur nécessaire). Si tu préfères recevoir les messages
-directement par email sans dépendre d'un client mail, crée un formulaire
-gratuit sur [Formspree](https://formspree.io) et, dans `index.html`, remplace :
+Le formulaire envoie directement un email via [Web3Forms](https://web3forms.com) :
+aucun serveur à héberger, gratuit et illimité. Le champ caché `access_key`
+dans `index.html` détermine où les messages sont livrés — pour changer de
+boîte mail, régénère une clé sur web3forms.com et remplace la valeur de :
 
 ```html
-<form class="contact-form" id="contactForm" novalidate>
+<input type="hidden" name="access_key" value="TA_CLE" />
 ```
 
-par :
-
-```html
-<form class="contact-form" action="https://formspree.io/f/TON_ID" method="POST">
-```
-
-(et retire le bloc `#contactForm` dans `script.js`).
+Le champ `botcheck` juste en dessous est un piège à robots (honeypot) : il
+doit rester présent et masqué (voir `.botcheck` dans `styles.css`), ne pas
+le supprimer.
 
 ## Mettre en ligne
 

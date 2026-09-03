@@ -693,6 +693,13 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
   display: grid;
   gap: 1.1rem;
 }
+.botcheck {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 .field { display: grid; gap: 0.45rem; }
 .field label {
   font-size: 0.78rem;
