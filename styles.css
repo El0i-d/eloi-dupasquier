@@ -588,6 +588,9 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
 .project h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
 .project p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.3rem; }
 .project-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
+/* Quand une carte a des technos ET un lien, les deux ont `margin-top: auto` :
+   le premier absorbe l'espace, le second se collerait juste dessous. */
+.project-stack + .project-link { margin-top: 1.1rem; }
 .project-stack li {
   font-size: 0.76rem;
   color: var(--muted);
@@ -688,6 +691,10 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
   font-size: 0.72rem;
   letter-spacing: 0.05em;
 }
+/* L'adresse email est un jeton insécable de plus de 200 px : sur un petit
+   écran elle doit pouvoir se couper, sinon elle élargit toute la page. */
+.contact-direct li > * { min-width: 0; overflow-wrap: anywhere; }
+
 .contact-direct a { color: var(--text); border-bottom: 1px solid var(--accent-dim); transition: color 0.2s; }
 .contact-direct a:hover { color: var(--accent); }
 
@@ -713,9 +720,16 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
   letter-spacing: 0.05em;
   color: var(--muted);
 }
+/* Les éléments de grille ont min-width:auto par défaut : le <select>
+   « Type de projet », dont les libellés sont longs, élargissait sinon
+   toute la colonne et faisait déborder la page sous 400 px. */
+.contact-grid > *, .contact-form > *, .field > * { min-width: 0; }
+
 .field input,
 .field select,
 .field textarea {
+  width: 100%;
+  min-width: 0;
   font-family: var(--mono);
   font-size: 0.92rem;
   color: var(--text);
