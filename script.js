@@ -4,6 +4,11 @@
 (function () {
   "use strict";
 
+  /* Sans JavaScript, aucun contenu ne doit rester masqué : la mise
+     en retrait des éléments révélés n'est appliquée que si ce
+     marqueur est posé. */
+  document.documentElement.classList.add("js-anim");
+
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* -------- Année dans le footer -------- */
@@ -49,6 +54,17 @@
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
     revealEls.forEach((el) => io.observe(el));
+
+    /* Filet de sécurité : si l'observateur n'a rien signalé, tout
+       élément déjà présent à l'écran est révélé malgré tout. Un
+       contenu invisible serait bien pire qu'une animation manquée. */
+    setTimeout(() => {
+      revealEls.forEach((el) => {
+        if (el.classList.contains("in")) return;
+        const b = el.getBoundingClientRect();
+        if (b.top < window.innerHeight && b.bottom > 0) el.classList.add("in");
+      });
+    }, 1200);
   }
 
   /* -------- Formulaire de contact --------

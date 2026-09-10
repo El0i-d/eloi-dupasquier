@@ -46,7 +46,10 @@ body {
   line-height: 1.65;
   font-size: 16px;
   letter-spacing: -0.01em;
-  overflow-x: hidden;
+  /* `clip` et non `hidden` : `hidden` ferait du <body> le conteneur de
+     défilement, ce qui casse `position: sticky` et fausse la lecture
+     de la position de défilement. */
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -825,7 +828,7 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
 }
 
 /* reveal au scroll */
-.reveal {
+.js-anim .reveal {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
@@ -893,6 +896,6 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .js-anim .reveal { opacity: 1; transform: none; }
   .caret, .term-cursor, .status-dot { animation: none !important; }
 }
