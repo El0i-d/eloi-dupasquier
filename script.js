@@ -15,6 +15,19 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* -------- Retour en haut --------
+     L'ancre suffit, mais on force le défilement pour être certain du
+     résultat quel que soit le navigateur. */
+  document.querySelectorAll('a[href="#top"]').forEach((lien) => {
+    lien.addEventListener("click", (e) => {
+      e.preventDefault();
+      const doux = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto" : "smooth";
+      window.scrollTo({ top: 0, behavior: doux });
+      history.replaceState(null, "", location.pathname + location.search);
+    });
+  });
+
   /* -------- Menu mobile -------- */
   const toggle = document.getElementById("menuToggle");
   const nav = document.getElementById("nav");

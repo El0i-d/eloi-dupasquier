@@ -39,7 +39,12 @@
 <a class="skip-link" href="#main">Aller au contenu</a>
 
 <!-- ============ HEADER ============ -->
-<header class="site-header" id="top">
+<!-- Cible du retour en haut. Elle ne peut pas vivre sur l'en-tête :
+     celui-ci est « sticky », donc toujours collé en haut de l'écran —
+     y renvoyer ne provoquerait aucun défilement. -->
+<span id="top" aria-hidden="true"></span>
+
+<header class="site-header">
   <div class="wrap header-inner">
     <a href="#top" class="logo" aria-label="Eloi Dupasquier — accueil">
       <span class="logo-mark" aria-hidden="true">&rsaquo;_</span>
