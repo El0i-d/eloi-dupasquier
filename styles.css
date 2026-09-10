@@ -899,3 +899,76 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
   .js-anim .reveal { opacity: 1; transform: none; }
   .caret, .term-cursor, .status-dot { animation: none !important; }
 }
+
+/* =========================================================
+   Pages légales
+   ========================================================= */
+.legal-doc { max-width: 74ch; }
+.legal-bloc { padding-block: clamp(1.4rem, 3vw, 2rem); border-top: 1px solid var(--line); }
+.legal-bloc:first-child { border-top: none; padding-top: 0; }
+.legal-bloc h3 {
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.legal-bloc p { color: var(--muted); font-size: 0.94rem; margin-bottom: 0.9rem; }
+.legal-bloc p:last-child { margin-bottom: 0; }
+.legal-bloc strong { color: var(--text); }
+.legal-bloc a { color: var(--accent); border-bottom: 1px solid var(--accent-dim); }
+.legal-bloc a:hover { border-color: var(--accent); }
+
+.legal-liste { display: grid; gap: 0.85rem; margin-bottom: 1rem; }
+.legal-liste li {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0.5rem 1rem;
+  font-size: 0.92rem;
+  color: var(--text);
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--line);
+}
+.legal-liste li:last-child { border-bottom: none; padding-bottom: 0; }
+.legal-liste li > * { min-width: 0; overflow-wrap: anywhere; }
+.legal-liste .k {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-2);
+  padding-top: 0.2rem;
+}
+
+.legal-puces { display: grid; gap: 0.7rem; }
+.legal-puces li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.94rem;
+  color: var(--muted);
+}
+.legal-puces li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.legal-note {
+  font-size: 0.86rem !important;
+  color: var(--muted-2) !important;
+  border-left: 2px solid var(--line-strong);
+  padding-left: 0.9rem;
+}
+.legal-maj {
+  margin-top: 1.6rem;
+  font-size: 0.8rem;
+  color: var(--muted-2);
+}
+
+@media (max-width: 680px) {
+  .legal-liste li { grid-template-columns: 1fr; gap: 0.2rem; }
+}
+
+/* Mention RGPD sous le formulaire de contact. */
+.form-legal { font-size: 0.78rem; color: var(--muted-2); text-align: center; }
+.form-legal a { color: var(--muted); border-bottom: 1px solid var(--line-strong); }
+.form-legal a:hover { color: var(--accent); }
