@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Meraki — Coiffeur & barbier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --noir:#0D0D0F;
+  --noir-2:#16161A;
+  --nuit:#1E1E24;
+  --lin:#EFE9E1;
+  --lin-doux:#A8A099;
+  --or:#C9A96B;
+  --or-clair:#E3CB98;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--noir);color:var(--lin);
+  font-family:'Jost',sans-serif;font-weight:300;font-size:17px;line-height:1.7;
+  overflow-x:hidden;
+}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+/* ---------- NAV ---------- */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,13,15,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(239,233,225,.08);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Bodoni Moda',serif;font-size:21px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.logo b{color:var(--or);font-weight:500}
+.nav-links{display:none;gap:32px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:400}
+.nav-links a{color:var(--lin-doux);text-decoration:none;position:relative;padding-bottom:3px}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--or);transition:width .3s}
+.nav-links a:hover{color:var(--lin)}
+.nav-links a:hover::after{width:100%}
+.rdv{
+  border:1px solid var(--or);color:var(--or);text-decoration:none;
+  padding:11px 22px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  transition:background .3s,color .3s;white-space:nowrap;
+}
+.rdv:hover{background:var(--or);color:var(--noir)}
+@media(min-width:900px){.nav-links{display:flex}}
+
+/* ---------- HERO ---------- */
+header{position:relative;padding:80px 0 90px;overflow:hidden}
+.halo{
+  position:absolute;width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,169,107,.16),transparent 68%);
+  top:-190px;right:-190px;pointer-events:none;
+  animation:pulse 11s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.12);opacity:.55}}
+.eyebrow{
+  font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--or);
+  margin-bottom:28px;animation:fade .9s both;
+}
+h1{
+  font-family:'Bodoni Moda',serif;font-weight:400;
+  font-size:clamp(48px,11.5vw,112px);line-height:.94;letter-spacing:-.02em;
+  margin-bottom:26px;animation:fade .9s .12s both;
+}
+h1 i{font-style:italic;color:var(--or)}
+.hero-p{
+  max-width:400px;color:var(--lin-doux);font-size:18px;margin-bottom:38px;
+  animation:fade .9s .24s both;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;animation:fade .9s .36s both}
+.btn{
+  padding:16px 32px;text-decoration:none;font-size:12px;letter-spacing:.2em;
+  text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:10px;
+  transition:all .3s;
+}
+.btn-or{background:var(--or);color:var(--noir)}
+.btn-or:hover{background:var(--or-clair);transform:translateY(-2px)}
+.btn-line{border:1px solid rgba(239,233,225,.3);color:var(--lin)}
+.btn-line:hover{border-color:var(--lin);transform:translateY(-2px)}
+@keyframes fade{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* ---------- CHIFFRES ---------- */
+.stats{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:rgba(239,233,225,.09);border-top:1px solid rgba(239,233,225,.09);
+  border-bottom:1px solid rgba(239,233,225,.09);
+}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--noir);padding:36px 22px;text-align:center}
+.stat b{display:block;font-family:'Bodoni Moda',serif;font-size:42px;font-weight:400;color:var(--or);line-height:1}
+.stat span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--lin-doux);margin-top:10px;display:block}
+
+/* ---------- SECTIONS ---------- */
+section{padding:92px 0}
+.sec-head{margin-bottom:54px;max-width:560px}
+.sec-num{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--or);margin-bottom:14px}
+h2{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(34px,6.5vw,56px);line-height:1.05;letter-spacing:-.015em}
+h2 i{font-style:italic;color:var(--or)}
+
+/* ---------- PRESTATIONS ---------- */
+.presta{border-top:1px solid rgba(239,233,225,.12)}
+.presta-row{
+  display:flex;align-items:baseline;justify-content:space-between;gap:20px;
+  padding:26px 4px;border-bottom:1px solid rgba(239,233,225,.12);
+  transition:padding-left .35s,background .35s;cursor:default;
+}
+.presta-row:hover{padding-left:18px;background:rgba(201,169,107,.05)}
+.presta-l{display:flex;flex-direction:column;gap:4px}
+.presta-l b{font-family:'Bodoni Moda',serif;font-size:23px;font-weight:400;letter-spacing:-.01em}
+.presta-l small{font-size:14px;color:var(--lin-doux);letter-spacing:.02em}
+.presta-p{
+  font-family:'Bodoni Moda',serif;font-size:22px;color:var(--or);white-space:nowrap;
+  display:flex;align-items:baseline;gap:8px;
+}
+.presta-p em{font-family:'Jost',sans-serif;font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lin-doux)}
+
+/* ---------- ÉQUIPE ---------- */
+.team{display:grid;grid-template-columns:1fr;gap:26px}
+@media(min-width:680px){.team{grid-template-columns:repeat(3,1fr)}}
+.mb{text-align:center}
+.mb-av{
+  width:100%;aspect-ratio:3/4;border-radius:2px;margin-bottom:20px;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#2A2A32,#16161A);
+  display:flex;align-items:center;justify-content:center;
+}
+.mb-av span{font-family:'Bodoni Moda',serif;font-size:64px;color:var(--or);opacity:.35}
+.mb-av::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(160deg,transparent 40%,rgba(201,169,107,.1));
+  opacity:0;transition:opacity .4s;
+}
+.mb:hover .mb-av::after{opacity:1}
+.mb h3{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:400;margin-bottom:5px}
+.mb p{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--or)}
+
+/* ---------- INFOS ---------- */
+.infos{background:var(--noir-2);border:1px solid rgba(239,233,225,.1)}
+.info-grid{display:grid;grid-template-columns:1fr}
+@media(min-width:840px){.info-grid{grid-template-columns:1fr 1fr}}
+.info-col{padding:46px 34px}
+@media(min-width:840px){.info-col:first-child{border-right:1px solid rgba(239,233,225,.1)}.info-col{padding:56px 50px}}
+.info-col h3{font-family:'Bodoni Moda',serif;font-size:28px;font-weight:400;margin-bottom:26px}
+.hours{list-style:none}
+.hours li{
+  display:flex;justify-content:space-between;gap:14px;padding:11px 0;
+  border-bottom:1px solid rgba(239,233,225,.08);font-size:15px;
+}
+.hours li:last-child{border:none}
+.hours .d{color:var(--lin-doux);letter-spacing:.06em}
+.hours .h{color:var(--lin);font-family:'Bodoni Moda',serif;white-space:nowrap}
+.hours li.now .d,.hours li.now .h{color:var(--or)}
+.hours .off{opacity:.35}
+.addr{font-size:17px;line-height:1.9;color:var(--lin-doux);margin-bottom:24px}
+.addr strong{display:block;color:var(--lin);font-family:'Bodoni Moda',serif;font-size:20px;margin-bottom:8px}
+.addr a{color:var(--or);text-decoration:none}
+.map{
+  width:100%;height:180px;position:relative;overflow:hidden;
+  background:
+    linear-gradient(rgba(239,233,225,.05) 1px,transparent 1px) 0 0/100% 24px,
+    linear-gradient(90deg,rgba(239,233,225,.05) 1px,transparent 1px) 0 0/24px 100%,
+    var(--nuit);
+  border:1px solid rgba(239,233,225,.1);
+}
+.map::after{
+  content:'';position:absolute;left:50%;top:50%;width:14px;height:14px;
+  background:var(--or);border-radius:50%;transform:translate(-50%,-50%);
+  box-shadow:0 0 0 0 rgba(201,169,107,.5);animation:pin 2.6s ease-out infinite;
+}
+@keyframes pin{0%{box-shadow:0 0 0 0 rgba(201,169,107,.5)}70%{box-shadow:0 0 0 28px rgba(201,169,107,0)}100%{box-shadow:0 0 0 0 rgba(201,169,107,0)}}
+
+/* ---------- AVIS ---------- */
+.quote{
+  text-align:center;max-width:720px;margin:0 auto;
+}
+.quote .mark{font-family:'Bodoni Moda',serif;font-size:88px;color:var(--or);line-height:.6;opacity:.5}
+.quote p{
+  font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(22px,4vw,32px);
+  line-height:1.45;margin:24px 0 26px;
+}
+.quote cite{font-style:normal;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--or)}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:30px}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(239,233,225,.25)}
+.dot.on{background:var(--or);width:22px;border-radius:3px}
+
+/* ---------- FINAL ---------- */
+.final{text-align:center;border-top:1px solid rgba(239,233,225,.1)}
+.final p{color:var(--lin-doux);max-width:430px;margin:18px auto 32px}
+
+footer{padding:34px 0 60px;border-top:1px solid rgba(239,233,225,.08);font-size:13px;color:var(--lin-doux)}
+.foot-in{display:flex;flex-direction:column;gap:12px;letter-spacing:.06em}
+@media(min-width:700px){.foot-in{flex-direction:row;justify-content:space-between;align-items:center}}
+.foot-in a{color:var(--or);text-decoration:none}
+
+.callbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--noir-2);
+  border-top:1px solid rgba(239,233,225,.12);
+  padding:11px 14px calc(11px + env(safe-area-inset-bottom));display:flex;gap:10px;
+}
+.callbar a{flex:1;text-align:center;padding:13px;text-decoration:none;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.cb1{background:var(--or);color:var(--noir)}
+.cb2{border:1px solid rgba(239,233,225,.28);color:var(--lin)}
+@media(min-width:900px){.callbar{display:none}}
+@media(max-width:899px){body{padding-bottom:76px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="logo">Studio <b>Meraki</b></div>
+    <div class="nav-links">
+      <a href="#presta">Prestations</a>
+      <a href="#equipe">L'équipe</a>
+      <a href="#infos">Horaires</a>
+    </div>
+    <a href="tel:+33300000000" class="rdv">Prendre RDV</a>
+  </div>
+</nav>
+
+<header>
+  <div class="halo"></div>
+  <div class="wrap">
+    <div class="eyebrow">Coiffeur — Barbier — Coloriste</div>
+    <h1>Votre coupe,<br><i>votre allure.</i></h1>
+    <p class="hero-p">Un salon à taille humaine au centre-ville. Diagnostic personnalisé, produits professionnels, et le temps qu'il faut pour bien faire.</p>
+    <div class="hero-cta">
+      <a href="tel:+33300000000" class="btn btn-or">Prendre rendez-vous</a>
+      <a href="#presta" class="btn btn-line">Voir les tarifs</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>4,9</b><span>Note Google</span></div>
+  <div class="stat"><b>380</b><span>Avis clients</span></div>
+  <div class="stat"><b>12</b><span>Ans d'expérience</span></div>
+  <div class="stat"><b>6j/7</b><span>Ouvert</span></div>
+</div>
+
+<section id="presta">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01 — Prestations</div>
+      <h2>Nos <i>tarifs</i></h2>
+    </div>
+    <div class="presta">
+      <div class="presta-row">
+        <div class="presta-l"><b>Coupe femme</b><small>Shampooing, coupe, brushing</small></div>
+        <div class="presta-p">38 € <em>1 h</em></div>
+      </div>
+      <div class="presta-row">
+        <div class="presta-l"><b>Coupe homme</b><small>Shampooing, coupe, coiffage</small></div>
+        <div class="presta-p">22 € <em>30 min</em></div>
+      </div>
+      <div class="presta-row">
+        <div class="presta-l"><b>Coupe + barbe</b><small>Taille, contours, serviette chaude</small></div>
+        <div class="presta-p">32 € <em>45 min</em></div>
+      </div>
+      <div class="presta-row">
+        <div class="presta-l"><b>Couleur / balayage</b><small>Diagnostic, application, soin</small></div>
+        <div class="presta-p">dès 65 € <em>2 h</em></div>
+      </div>
+      <div class="presta-row">
+        <div class="presta-l"><b>Coupe enfant</b><small>Moins de 12 ans</small></div>
+        <div class="presta-p">16 € <em>25 min</em></div>
+      </div>
+      <div class="presta-row">
+        <div class="presta-l"><b>Coiffure mariage</b><small>Essai inclus, déplacement possible</small></div>
+        <div class="presta-p">sur devis <em>—</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="equipe" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02 — L'équipe</div>
+      <h2>Des mains <i>expertes</i></h2>
+    </div>
+    <div class="team">
+      <div class="mb"><div class="mb-av"><span>C</span></div><h3>Camille</h3><p>Coloriste</p></div>
+      <div class="mb"><div class="mb-av"><span>S</span></div><h3>Samir</h3><p>Barbier</p></div>
+      <div class="mb"><div class="mb-av"><span>L</span></div><h3>Léa</h3><p>Visagiste</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="infos" style="padding-top:0">
+  <div class="wrap">
+    <div class="infos">
+      <div class="info-grid">
+        <div class="info-col">
+          <h3>Horaires</h3>
+          <ul class="hours">
+            <li><span class="d">Lundi</span><span class="h off">Fermé</span></li>
+            <li class="now"><span class="d">Mardi</span><span class="h">9h00 – 19h00</span></li>
+            <li><span class="d">Mercredi</span><span class="h">9h00 – 19h00</span></li>
+            <li><span class="d">Jeudi</span><span class="h">9h00 – 19h00</span></li>
+            <li><span class="d">Vendredi</span><span class="h">9h00 – 20h00</span></li>
+            <li><span class="d">Samedi</span><span class="h">8h30 – 18h00</span></li>
+            <li><span class="d">Dimanche</span><span class="h off">Fermé</span></li>
+          </ul>
+        </div>
+        <div class="info-col">
+          <h3>Nous trouver</h3>
+          <div class="addr">
+            <strong>24 rue du Commerce</strong>
+            00000 Ville-Exemple<br>
+            <a href="tel:+33300000000">03 00 00 00 00</a>
+          </div>
+          <div class="map"></div>
+          <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="btn btn-line" style="margin-top:22px">Itinéraire →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="quote">
+      <div class="mark">“</div>
+      <p>On sent tout de suite qu'ils prennent le temps. Le diagnostic avant la couleur, ça change vraiment tout — je n'avais jamais eu un résultat aussi naturel.</p>
+      <cite>Aurélie M. — cliente depuis 4 ans</cite>
+      <div class="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Une envie de <i>changement</i> ?</h2>
+    <p>Appelez-nous ou passez au salon. On trouve toujours un créneau, même à la dernière minute.</p>
+    <a href="tel:+33300000000" class="btn btn-or">📞 03 00 00 00 00</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>STUDIO MERAKI — 24 rue du Commerce, 00000 Ville-Exemple</div>
+    <div>Démonstration réalisée par <a href="https://edupasquier.me" target="_blank" rel="noopener">Eloi&nbsp;Dupasquier</a></div>
+  </div>
+
+  <div class="wrap demo-note">
+    <p>
+      <strong>Projet fictif.</strong> Studio Meraki n'existe pas. Cette page a été créée pour montrer à quoi peut ressembler le site d'un salon de coiffure. L'adresse, le numéro de
+      téléphone et les avis qui y figurent sont inventés et ne correspondent
+      à aucun commerce réel. Aucune donnée n'est collectée sur cette page.
+    </p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+33300000000" class="cb1">Appeler</a>
+  <a href="#infos" class="cb2">Itinéraire</a>
+</div>
+
+
+<style>
+/* ---------- INTERACTIVITÉ AU DÉFILEMENT ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-38px);transition:opacity .9s cubic-bezier(.16,.8,.3,1),transform .9s cubic-bezier(.16,.8,.3,1)}
+.reveal-l.in{opacity:1;transform:none}
+.reveal-s{opacity:0;transform:translateY(26px) scale(.97);transition:opacity .75s cubic-bezier(.16,.8,.3,1),transform .75s cubic-bezier(.16,.8,.3,1)}
+.reveal-s.in{opacity:1;transform:none}
+
+/* barre de progression de lecture */
+#prog{
+  position:fixed;top:0;left:0;height:3px;width:0%;z-index:9999;
+  background:linear-gradient(90deg,#C9A96B,#E3CB98);
+  transition:width .1s linear;pointer-events:none;
+}
+
+/* nav compacte au scroll */
+nav{transition:box-shadow .35s,padding .35s}
+nav.scrolled{box-shadow:0 6px 28px -12px rgba(0,0,0,.6)}
+nav.scrolled .nav-in{padding-top:9px;padding-bottom:9px}
+
+/* titres de section : trait qui se déploie */
+h2{position:relative}
+h2.line-in::after{
+  content:'';position:absolute;left:0;bottom:-14px;height:3px;width:0;
+  background:#C9A96B;transition:width 1s .25s cubic-bezier(.16,.8,.3,1);
+}
+h2.line-in.in::after{width:72px}
+
+/* retour en haut */
+#totop{
+  position:fixed;right:18px;bottom:96px;z-index:180;width:46px;height:46px;
+  border:none;border-radius:50%;background:#C9A96B;color:#fff;font-size:19px;
+  cursor:pointer;opacity:0;pointer-events:none;transform:translateY(14px);
+  transition:opacity .35s,transform .35s;box-shadow:0 8px 22px -8px rgba(0,0,0,.5);
+}
+#totop.show{opacity:1;pointer-events:auto;transform:none}
+#totop:hover{transform:translateY(-3px)}
+@media(min-width:920px){#totop{bottom:26px}}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal-l,.reveal-s{opacity:1!important;transform:none!important;transition:none}
+  #prog{display:none}
+}
+
+/* ---------- MENTION DE PROJET FICTIF ---------- */
+.demo-note{
+  margin-top:26px;padding-top:18px;border-top:1px solid rgba(239,233,225,.12);
+  max-width:70ch;font-size:13px;line-height:1.65;color:var(--lin-doux);
+}
+.demo-note strong{color:var(--or)}
+</style>
+
+<div id="prog"></div>
+<button id="totop" aria-label="Retour en haut">↑</button>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 1. Attribution automatique des classes de révélation */
+  document.querySelectorAll('.sec-head').forEach(function(el){ el.classList.add('reveal-l'); });
+  document.querySelectorAll('h2').forEach(function(el){ el.classList.add('line-in'); });
+  document.querySelectorAll('.card,.avis,.svc-i,.mb,.why-i,.stat,.quote-card,.info,.infos,.info-grid,.presta-row,.quote,.final .wrap')
+    .forEach(function(el){ if(!el.closest('header')) el.classList.add('reveal-s'); });
+  document.querySelectorAll('.map,.hours,.addr').forEach(function(el){ el.classList.add('reveal'); });
+
+  /* 2. Décalage en cascade entre voisins */
+  ['.grid','.svc','.team','.avis-grid','.avis-g','.why-grid','.stats','.presta']
+    .forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(parent){
+        Array.prototype.forEach.call(parent.children, function(child, i){
+          child.style.transitionDelay = Math.min(i * 80, 480) + 'ms';
+        });
+      });
+    });
+
+  /* 3. Observer d'entrée dans le viewport */
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-s,.line-in').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-s,.line-in').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* 4. Compteurs animés (chiffres clés) */
+  function animateCount(el){
+    var raw = el.textContent.trim();
+    var m = raw.match(/^([^\d]*)([\d]+(?:[.,][\d]+)?)(.*)$/);
+    if(!m) return;
+    var pre = m[1], target = parseFloat(m[2].replace(',', '.')), post = m[3];
+    var dec = (m[2].indexOf(',') > -1 || m[2].indexOf('.') > -1) ? 1 : 0;
+    var start = null, dur = 1400;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = (target * eased).toFixed(dec).replace('.', ',');
+      el.textContent = pre + val + post;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window && !reduce){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); }
+      });
+    }, {threshold:.6});
+    document.querySelectorAll('.stat b,.why-i b').forEach(function(el){ cio.observe(el); });
+  }
+
+  /* 5. Barre de progression + nav + bouton retour */
+  var prog = document.getElementById('prog');
+  var navEl = document.querySelector('nav');
+  var top = document.getElementById('totop');
+  var ticking = false;
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if(prog) prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    if(navEl) navEl.classList.toggle('scrolled', y > 40);
+    if(top) top.classList.toggle('show', y > 600);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
+  }, {passive:true});
+  onScroll();
+  if(top) top.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+  /* 6. Léger parallaxe sur le décor du hero */
+  var art = document.querySelector('.hero-art, .halo');
+  if(art && !reduce && window.innerWidth > 900){
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      if(y < 900) art.style.transform = 'translateY(' + (y * 0.18) + 'px)';
+    }, {passive:true});
+  }
+})();
+</script>
+
+</body>
+</html>

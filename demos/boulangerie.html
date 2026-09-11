@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Léonard — Boulangerie artisanale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,900&family=Karla:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --creme:#F7F1E6;
+  --creme-2:#EFE5D4;
+  --pain:#C2843F;
+  --croute:#8A4B1E;
+  --encre:#241A12;
+  --encre-doux:#5C4A3A;
+  --braise:#D9531E;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--creme);
+  color:var(--encre);
+  font-family:'Karla',sans-serif;
+  font-size:17px;line-height:1.65;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* ---------- NAV ---------- */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(247,241,230,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(36,26,18,.1);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1120px;margin:0 auto}
+.logo{font-family:'Fraunces',serif;font-weight:900;font-size:20px;letter-spacing:-.01em}
+.logo span{color:var(--croute)}
+.nav-links{display:none;gap:28px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.nav-links a{color:var(--encre-doux);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--braise)}
+.tel-btn{
+  background:var(--croute);color:var(--creme);text-decoration:none;
+  padding:10px 18px;border-radius:999px;font-size:14px;font-weight:700;
+  display:inline-flex;align-items:center;gap:7px;transition:transform .2s,background .2s;
+  white-space:nowrap;
+}
+.tel-btn:hover{background:var(--braise);transform:translateY(-2px)}
+@media(min-width:860px){.nav-links{display:flex}}
+
+/* ---------- HERO ---------- */
+header{position:relative;padding:64px 0 72px;overflow:hidden}
+.hero-tag{
+  display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--croute);font-weight:700;margin-bottom:20px;
+  padding-bottom:6px;border-bottom:2px solid var(--pain);
+  animation:rise .8s cubic-bezier(.2,.7,.3,1) both;
+}
+h1{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(46px,12vw,104px);line-height:.92;letter-spacing:-.035em;
+  margin-bottom:22px;animation:rise .8s .1s cubic-bezier(.2,.7,.3,1) both;
+}
+h1 em{font-style:italic;font-weight:300;color:var(--croute);display:block}
+.hero-p{
+  max-width:440px;font-size:19px;color:var(--encre-doux);margin-bottom:34px;
+  animation:rise .8s .2s cubic-bezier(.2,.7,.3,1) both;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;animation:rise .8s .3s cubic-bezier(.2,.7,.3,1) both}
+.btn{
+  padding:15px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px;
+  display:inline-flex;align-items:center;gap:9px;transition:transform .2s,box-shadow .2s;
+}
+.btn-solid{background:var(--encre);color:var(--creme);box-shadow:0 6px 0 var(--croute)}
+.btn-solid:hover{transform:translateY(-3px);box-shadow:0 9px 0 var(--croute)}
+.btn-ghost{border:2px solid var(--encre);color:var(--encre)}
+.btn-ghost:hover{background:var(--encre);color:var(--creme);transform:translateY(-3px)}
+.hero-art{
+  position:absolute;right:-90px;top:40px;width:440px;height:440px;
+  opacity:.85;pointer-events:none;display:none;
+  animation:float 9s ease-in-out infinite;
+}
+@media(min-width:900px){.hero-art{display:block}header{padding:88px 0 96px}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-22px) rotate(2deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* ---------- BANDEAU ---------- */
+.ticker{
+  background:var(--croute);color:var(--creme);padding:13px 0;overflow:hidden;
+  font-family:'Fraunces',serif;font-size:15px;letter-spacing:.08em;text-transform:uppercase;
+}
+.ticker-in{display:flex;gap:44px;white-space:nowrap;animation:slide 26s linear infinite;width:max-content}
+.ticker-in span{display:flex;align-items:center;gap:44px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- PRODUITS ---------- */
+section{padding:82px 0}
+.sec-head{margin-bottom:48px}
+.sec-num{font-family:'Fraunces',serif;font-size:13px;color:var(--pain);letter-spacing:.2em;font-weight:600}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(32px,6vw,50px);line-height:1.05;letter-spacing:-.025em;margin-top:8px}
+.grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:620px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid{grid-template-columns:repeat(4,1fr);gap:22px}}
+.card{
+  background:var(--creme-2);border-radius:20px;padding:28px 24px 26px;
+  border:1px solid rgba(138,75,30,.14);position:relative;overflow:hidden;
+  transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s;
+}
+.card:hover{transform:translateY(-7px);box-shadow:0 18px 36px -18px rgba(138,75,30,.5)}
+.card-ico{width:52px;height:52px;margin-bottom:18px}
+.card h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:8px;letter-spacing:-.01em}
+.card p{font-size:15px;color:var(--encre-doux);line-height:1.55}
+.card .price{margin-top:16px;font-weight:700;color:var(--croute);font-size:15px}
+
+/* ---------- HORAIRES ---------- */
+.info{background:var(--encre);color:var(--creme);border-radius:28px;padding:44px 30px;margin:0 auto}
+.info-grid{display:grid;grid-template-columns:1fr;gap:40px}
+@media(min-width:800px){.info-grid{grid-template-columns:1.1fr 1fr;gap:56px}.info{padding:56px 52px}}
+.info h2{color:var(--creme);margin-bottom:26px}
+.hours{list-style:none}
+.hours li{
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:12px 0;border-bottom:1px dashed rgba(247,241,230,.22);font-size:16px;
+}
+.hours li.today{color:var(--pain);font-weight:700}
+.hours li.today::after{content:'aujourd’hui';font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-left:8px}
+.hours .d{font-weight:500}
+.hours .h{font-family:'Fraunces',serif;letter-spacing:.02em;white-space:nowrap}
+.closed{opacity:.42}
+.addr{font-size:17px;line-height:1.8;margin-bottom:22px}
+.addr strong{font-family:'Fraunces',serif;font-size:19px;display:block;margin-bottom:6px}
+.map{
+  width:100%;height:190px;border-radius:16px;border:1px solid rgba(247,241,230,.2);
+  background:
+    linear-gradient(rgba(247,241,230,.07) 1px,transparent 1px) 0 0/100% 26px,
+    linear-gradient(90deg,rgba(247,241,230,.07) 1px,transparent 1px) 0 0/26px 100%,
+    linear-gradient(135deg,#3A2A1C,#241A12);
+  position:relative;overflow:hidden;
+}
+.map::after{
+  content:'';position:absolute;left:50%;top:50%;width:18px;height:18px;
+  background:var(--braise);border-radius:50% 50% 50% 0;transform:translate(-50%,-100%) rotate(-45deg);
+  box-shadow:0 0 0 0 rgba(217,83,30,.55);animation:pin 2.4s ease-out infinite;
+}
+@keyframes pin{0%{box-shadow:0 0 0 0 rgba(217,83,30,.55)}70%{box-shadow:0 0 0 26px rgba(217,83,30,0)}100%{box-shadow:0 0 0 0 rgba(217,83,30,0)}}
+.map-lbl{position:absolute;left:14px;bottom:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+
+/* ---------- AVIS ---------- */
+.avis-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:760px){.avis-grid{grid-template-columns:repeat(3,1fr)}}
+.avis{
+  background:var(--creme-2);border-radius:18px;padding:28px 26px;
+  border-left:4px solid var(--pain);
+}
+.stars{color:var(--braise);letter-spacing:.14em;font-size:14px;margin-bottom:12px}
+.avis p{font-family:'Fraunces',serif;font-size:17px;line-height:1.6;font-style:italic;margin-bottom:16px}
+.avis cite{font-style:normal;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--encre-doux);font-weight:700}
+
+/* ---------- CTA FINAL ---------- */
+.final{text-align:center;padding:86px 0 96px}
+.final h2{margin-bottom:18px}
+.final p{max-width:440px;margin:0 auto 30px;color:var(--encre-doux);font-size:18px}
+
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid rgba(36,26,18,.12);padding:36px 0 60px;font-size:14px;color:var(--encre-doux)}
+.foot-in{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+@media(min-width:700px){.foot-in{flex-direction:row;justify-content:space-between;align-items:center}}
+.foot-in a{color:var(--croute);text-decoration:none}
+
+/* barre appel mobile */
+.callbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:200;
+  background:var(--encre);padding:11px 16px calc(11px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;
+}
+.callbar a{
+  flex:1;text-align:center;padding:13px;border-radius:12px;text-decoration:none;
+  font-weight:700;font-size:15px;
+}
+.cb1{background:var(--braise);color:#fff}
+.cb2{background:transparent;color:var(--creme);border:1.5px solid rgba(247,241,230,.35)}
+@media(min-width:860px){.callbar{display:none}}
+@media(max-width:859px){body{padding-bottom:78px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="logo">Maison <span>Léonard</span></div>
+    <div class="nav-links">
+      <a href="#produits">Nos pains</a>
+      <a href="#infos">Horaires</a>
+      <a href="#avis">Avis</a>
+    </div>
+    <a href="tel:+33300000000" class="tel-btn">📞 03 00 00 00 00</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="hero-tag">Artisan boulanger depuis 1987</div>
+    <h1>Le pain<em>de tous les jours.</em></h1>
+    <p class="hero-p">Farines de meunerie locale, levain naturel, pétrissage lent. Tout est fait sur place, chaque matin, dans notre fournil.</p>
+    <div class="hero-cta">
+      <a href="#produits" class="btn btn-solid">Voir nos produits →</a>
+      <a href="#infos" class="btn btn-ghost">Horaires & accès</a>
+    </div>
+  </div>
+  <svg class="hero-art" viewBox="0 0 400 400" fill="none">
+    <ellipse cx="200" cy="200" rx="150" ry="108" fill="#C2843F" transform="rotate(-14 200 200)"/>
+    <ellipse cx="200" cy="188" rx="150" ry="108" fill="#D99A52" transform="rotate(-14 200 188)"/>
+    <path d="M118 150 L166 128 M150 184 L198 162 M182 218 L230 196 M214 252 L262 230" stroke="#8A4B1E" stroke-width="9" stroke-linecap="round" opacity=".55"/>
+    <ellipse cx="200" cy="188" rx="150" ry="108" fill="none" stroke="#8A4B1E" stroke-width="3" opacity=".35" transform="rotate(-14 200 188)"/>
+  </svg>
+</header>
+
+<div class="ticker">
+  <div class="ticker-in">
+    <span>Levain naturel ✦ Farine bio ✦ Cuisson au feu ✦ Fait maison ✦ Levain naturel ✦ Farine bio ✦ Cuisson au feu ✦ Fait maison ✦</span>
+    <span>Levain naturel ✦ Farine bio ✦ Cuisson au feu ✦ Fait maison ✦ Levain naturel ✦ Farine bio ✦ Cuisson au feu ✦ Fait maison ✦</span>
+  </div>
+</div>
+
+<section id="produits">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01 — LA VITRINE</div>
+      <h2>Ce qui sort du four</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <svg class="card-ico" viewBox="0 0 48 48" fill="none"><rect x="5" y="17" width="38" height="15" rx="7.5" fill="#C2843F"/><path d="M13 20l4 9M21 19l4 11M29 19l4 11M37 21l3 7" stroke="#8A4B1E" stroke-width="2.6" stroke-linecap="round"/></svg>
+        <h3>Baguette tradition</h3>
+        <p>Pétrie à la main, 18 h de fermentation lente. Croustillante dehors, alvéolée dedans.</p>
+        <div class="price">1,30 €</div>
+      </div>
+      <div class="card">
+        <svg class="card-ico" viewBox="0 0 48 48" fill="none"><path d="M9 30c0-9 6.7-15 15-15s15 6 15 15z" fill="#C2843F"/><path d="M24 15v15M17 17.5l4 12.5M31 17.5l-4 12.5" stroke="#8A4B1E" stroke-width="2.4" stroke-linecap="round"/><rect x="7" y="29" width="34" height="5" rx="2.5" fill="#8A4B1E"/></svg>
+        <h3>Pain au levain</h3>
+        <p>Grosse miche de 1 kg, levain de seigle entretenu depuis 30 ans. Se garde une semaine.</p>
+        <div class="price">4,80 € la miche</div>
+      </div>
+      <div class="card">
+        <svg class="card-ico" viewBox="0 0 48 48" fill="none"><path d="M8 31c3-11 11-16 16-16s13 5 16 16z" fill="#D99A52"/><path d="M14 31c1.5-8 5.5-12 10-12s8.5 4 10 12" stroke="#8A4B1E" stroke-width="2.4"/><circle cx="24" cy="24" r="2.6" fill="#8A4B1E"/></svg>
+        <h3>Viennoiseries</h3>
+        <p>Croissants et pains au chocolat pur beurre, tourés maison. Cuisson en continu le matin.</p>
+        <div class="price">à partir de 1,20 €</div>
+      </div>
+      <div class="card">
+        <svg class="card-ico" viewBox="0 0 48 48" fill="none"><rect x="8" y="20" width="32" height="16" rx="3" fill="#C2843F"/><path d="M8 26h32" stroke="#8A4B1E" stroke-width="2.4"/><circle cx="17" cy="16" r="4" fill="#D9531E"/><circle cx="26" cy="14" r="4" fill="#D9531E"/><circle cx="34" cy="17" r="3.4" fill="#D9531E"/></svg>
+        <h3>Pâtisseries</h3>
+        <p>Tartes de saison, éclairs, flans. Commandes pour vos occasions, 48 h à l'avance.</p>
+        <div class="price">sur commande</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="infos" style="padding-top:0">
+  <div class="wrap">
+    <div class="info">
+      <div class="info-grid">
+        <div>
+          <div class="sec-num" style="color:var(--pain)">02 — NOUS TROUVER</div>
+          <h2>Horaires</h2>
+          <ul class="hours">
+            <li><span class="d">Lundi</span><span class="h closed">Fermé</span></li>
+            <li class="today"><span class="d">Mardi</span><span class="h">6h30 – 19h30</span></li>
+            <li><span class="d">Mercredi</span><span class="h">6h30 – 19h30</span></li>
+            <li><span class="d">Jeudi</span><span class="h">6h30 – 19h30</span></li>
+            <li><span class="d">Vendredi</span><span class="h">6h30 – 19h30</span></li>
+            <li><span class="d">Samedi</span><span class="h">6h30 – 19h00</span></li>
+            <li style="border:none"><span class="d">Dimanche</span><span class="h">7h00 – 13h00</span></li>
+          </ul>
+        </div>
+        <div>
+          <div class="addr">
+            <strong>12 rue des Halles</strong>
+            00000 Ville-Exemple<br>
+            <a href="tel:+33300000000" style="color:var(--pain);text-decoration:none;font-weight:700">03 00 00 00 00</a>
+          </div>
+          <div class="map"><span class="map-lbl">Plan d'accès</span></div>
+          <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="btn btn-solid" style="margin-top:20px;box-shadow:0 6px 0 var(--pain)">Itinéraire →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="avis">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03 — ILS EN PARLENT</div>
+      <h2>4,8 sur Google</h2>
+    </div>
+    <div class="avis-grid">
+      <div class="avis">
+        <div class="stars">★★★★★</div>
+        <p>« La meilleure baguette du quartier, sans hésiter. J'y vais tous les matins depuis trois ans. »</p>
+        <cite>Martine D.</cite>
+      </div>
+      <div class="avis">
+        <div class="stars">★★★★★</div>
+        <p>« Accueil toujours souriant et des viennoiseries qui sortent du four quand on arrive. Parfait. »</p>
+        <cite>Julien R.</cite>
+      </div>
+      <div class="avis">
+        <div class="stars">★★★★★</div>
+        <p>« Le pain au levain se garde vraiment toute la semaine. On ne revient pas en arrière. »</p>
+        <cite>Sophie L.</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Une commande à passer ?</h2>
+    <p>Gâteau d'anniversaire, plateau de viennoiseries, pain pour un événement — appelez-nous, on s'occupe du reste.</p>
+    <a href="tel:+33300000000" class="btn btn-solid">📞 03 00 00 00 00</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div><strong style="font-family:'Fraunces',serif">Maison Léonard</strong> — 12 rue des Halles, 00000 Ville-Exemple</div>
+    <div>Démonstration réalisée par <a href="https://edupasquier.me" target="_blank" rel="noopener">Eloi&nbsp;Dupasquier</a></div>
+  </div>
+
+  <div class="wrap demo-note">
+    <p>
+      <strong>Projet fictif.</strong> Maison Léonard n'existe pas. Cette page a été créée pour montrer à quoi peut ressembler le site d'une boulangerie de quartier. L'adresse, le numéro de
+      téléphone et les avis qui y figurent sont inventés et ne correspondent
+      à aucun commerce réel. Aucune donnée n'est collectée sur cette page.
+    </p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+33300000000" class="cb1">📞 Appeler</a>
+  <a href="#infos" class="cb2">📍 Itinéraire</a>
+</div>
+
+
+<style>
+/* ---------- INTERACTIVITÉ AU DÉFILEMENT ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-38px);transition:opacity .9s cubic-bezier(.16,.8,.3,1),transform .9s cubic-bezier(.16,.8,.3,1)}
+.reveal-l.in{opacity:1;transform:none}
+.reveal-s{opacity:0;transform:translateY(26px) scale(.97);transition:opacity .75s cubic-bezier(.16,.8,.3,1),transform .75s cubic-bezier(.16,.8,.3,1)}
+.reveal-s.in{opacity:1;transform:none}
+
+/* barre de progression de lecture */
+#prog{
+  position:fixed;top:0;left:0;height:3px;width:0%;z-index:9999;
+  background:linear-gradient(90deg,#8A4B1E,#D9531E);
+  transition:width .1s linear;pointer-events:none;
+}
+
+/* nav compacte au scroll */
+nav{transition:box-shadow .35s,padding .35s}
+nav.scrolled{box-shadow:0 6px 28px -12px rgba(0,0,0,.28)}
+nav.scrolled .nav-in{padding-top:9px;padding-bottom:9px}
+
+/* titres de section : trait qui se déploie */
+h2{position:relative}
+h2.line-in::after{
+  content:'';position:absolute;left:0;bottom:-14px;height:3px;width:0;
+  background:#8A4B1E;transition:width 1s .25s cubic-bezier(.16,.8,.3,1);
+}
+h2.line-in.in::after{width:72px}
+
+/* retour en haut */
+#totop{
+  position:fixed;right:18px;bottom:96px;z-index:180;width:46px;height:46px;
+  border:none;border-radius:50%;background:#8A4B1E;color:#fff;font-size:19px;
+  cursor:pointer;opacity:0;pointer-events:none;transform:translateY(14px);
+  transition:opacity .35s,transform .35s;box-shadow:0 8px 22px -8px rgba(0,0,0,.5);
+}
+#totop.show{opacity:1;pointer-events:auto;transform:none}
+#totop:hover{transform:translateY(-3px)}
+@media(min-width:920px){#totop{bottom:26px}}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal-l,.reveal-s{opacity:1!important;transform:none!important;transition:none}
+  #prog{display:none}
+}
+
+/* ---------- MENTION DE PROJET FICTIF ---------- */
+.demo-note{
+  margin-top:26px;padding-top:18px;border-top:1px solid rgba(36,26,18,.14);
+  max-width:70ch;font-size:13px;line-height:1.65;color:var(--encre-doux);
+}
+.demo-note strong{color:var(--croute)}
+</style>
+
+<div id="prog"></div>
+<button id="totop" aria-label="Retour en haut">↑</button>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 1. Attribution automatique des classes de révélation */
+  document.querySelectorAll('.sec-head').forEach(function(el){ el.classList.add('reveal-l'); });
+  document.querySelectorAll('h2').forEach(function(el){ el.classList.add('line-in'); });
+  document.querySelectorAll('.card,.avis,.svc-i,.mb,.why-i,.stat,.quote-card,.info,.infos,.info-grid,.presta-row,.quote,.final .wrap')
+    .forEach(function(el){ if(!el.closest('header')) el.classList.add('reveal-s'); });
+  document.querySelectorAll('.map,.hours,.addr').forEach(function(el){ el.classList.add('reveal'); });
+
+  /* 2. Décalage en cascade entre voisins */
+  ['.grid','.svc','.team','.avis-grid','.avis-g','.why-grid','.stats','.presta']
+    .forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(parent){
+        Array.prototype.forEach.call(parent.children, function(child, i){
+          child.style.transitionDelay = Math.min(i * 80, 480) + 'ms';
+        });
+      });
+    });
+
+  /* 3. Observer d'entrée dans le viewport */
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-s,.line-in').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-s,.line-in').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* 4. Compteurs animés (chiffres clés) */
+  function animateCount(el){
+    var raw = el.textContent.trim();
+    var m = raw.match(/^([^\d]*)([\d]+(?:[.,][\d]+)?)(.*)$/);
+    if(!m) return;
+    var pre = m[1], target = parseFloat(m[2].replace(',', '.')), post = m[3];
+    var dec = (m[2].indexOf(',') > -1 || m[2].indexOf('.') > -1) ? 1 : 0;
+    var start = null, dur = 1400;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = (target * eased).toFixed(dec).replace('.', ',');
+      el.textContent = pre + val + post;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window && !reduce){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); }
+      });
+    }, {threshold:.6});
+    document.querySelectorAll('.stat b,.why-i b').forEach(function(el){ cio.observe(el); });
+  }
+
+  /* 5. Barre de progression + nav + bouton retour */
+  var prog = document.getElementById('prog');
+  var navEl = document.querySelector('nav');
+  var top = document.getElementById('totop');
+  var ticking = false;
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if(prog) prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    if(navEl) navEl.classList.toggle('scrolled', y > 40);
+    if(top) top.classList.toggle('show', y > 600);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
+  }, {passive:true});
+  onScroll();
+  if(top) top.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+  /* 6. Léger parallaxe sur le décor du hero */
+  var art = document.querySelector('.hero-art, .halo');
+  if(art && !reduce && window.innerWidth > 900){
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      if(y < 900) art.style.transform = 'translateY(' + (y * 0.18) + 'px)';
+    }, {passive:true});
+  }
+})();
+</script>
+
+</body>
+</html>

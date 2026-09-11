@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Réalisations — Eloi Dupasquier</title>
+<meta
+  name="description"
+  content="Six sites de démonstration et deux applications : boulangerie, garage, salon de coiffure, horlogerie, galerie d'art. Chaque projet est consultable en ligne."
+/>
+<meta name="author" content="Eloi Dupasquier" />
+<meta name="theme-color" content="#0c0d10" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Réalisations — Eloi Dupasquier" />
+<meta
+  property="og:description"
+  content="Six sites de démonstration et deux applications, consultables en ligne."
+/>
+<meta property="og:locale" content="fr_FR" />
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="styles.css" />
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-grain" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- Cible du retour en haut. Elle ne peut pas vivre sur l'en-tête :
+     celui-ci est « sticky », donc toujours collé en haut de l'écran —
+     y renvoyer ne provoquerait aucun défilement. -->
+<span id="top" aria-hidden="true"></span>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo" aria-label="Eloi Dupasquier — accueil">
+      <span class="logo-mark" aria-hidden="true">&rsaquo;_</span>
+      <span class="logo-text">eloi<span class="dim">.</span>dupasquier</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#approche">Approche</a>
+      <a href="realisations.html" aria-current="page">Réalisations</a>
+      <a href="index.html#contact" class="nav-cta">Démarrer un projet</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section wrap">
+    <div class="section-head reveal">
+      <span class="section-index">// réalisations</span>
+      <h2>Tout ce que j'ai construit</h2>
+      <p class="section-lead">
+        Six sites de démonstration, chacun pensé pour un métier différent,
+        et deux applications développées en parallèle. Tous sont
+        consultables en ligne : cliquez, parcourez, jugez.
+      </p>
+    </div>
+
+    <p class="legal-note reveal" style="max-width: 62ch; margin-bottom: clamp(2rem, 4vw, 3rem);">
+      Les six sites de démonstration présentent des commerces
+      <strong>fictifs</strong>. Enseignes, adresses, tarifs, horaires et avis
+      sont inventés : ce sont des vitrines de savoir-faire, pas des commandes
+      client. Chaque page le rappelle explicitement.
+    </p>
+
+    <h3 class="projects-group reveal">
+      <span class="projects-group-label">01</span>
+      Sites complets — plusieurs pages
+    </h3>
+
+    <div class="projects">
+      <article class="project reveal">
+        <div class="project-top">
+          <span class="project-tag">Démo — 8 pages</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h4>Rouage — Manufacture horlogère</h4>
+        <p>
+          Site vitrine haut de gamme : fiches produit détaillées,
+          spécifications techniques, et illustrations de mouvements dessinées
+          en SVG plutôt que photographiées.
+        </p>
+        <ul class="project-stack">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>SVG</li>
+        </ul>
+        <a href="https://el0i-d.github.io/rouage-horlogerie/" class="project-link"
+           target="_blank" rel="noopener">Voir le site <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top">
+          <span class="project-tag">Démo — 5 pages</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h4>Anouk Brémond — Peintre</h4>
+        <p>
+          Portfolio d'artiste : catalogue filtrable par série et visionneuse
+          d'œuvres navigable au clavier. Les toiles présentées sont elles
+          aussi composées en SVG.
+        </p>
+        <ul class="project-stack">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>SVG</li>
+        </ul>
+        <a href="https://el0i-d.github.io/atelier-bremond/" class="project-link"
+           target="_blank" rel="noopener">Voir le site <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top">
+          <span class="project-tag">Démo — 4 pages</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h4>Racine — Salon de coiffure</h4>
+        <p>
+          Site de commerce local : grille tarifaire complète, demande de
+          rendez-vous, et statut d'ouverture calculé en direct à partir des
+          horaires du salon.
+        </p>
+        <ul class="project-stack">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li>
+        </ul>
+        <a href="https://el0i-d.github.io/salon-racine/" class="project-link"
+           target="_blank" rel="noopener">Voir le site <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+
+    <h3 class="projects-group reveal">
+      <span class="projects-group-label">02</span>
+      Pages uniques — le format court
+    </h3>
+    <p class="projects-group-lead reveal">
+      Tout le commerce sur un seul écran déroulant : ce qu'on vend, les
+      horaires, l'adresse, et un bouton d'appel qui reste à portée de pouce
+      sur mobile. Le format le plus direct pour un commerce de proximité.
+    </p>
+
+    <div class="projects">
+      <article class="project reveal">
+        <div class="project-top">
+          <span class="project-tag">Démo — page unique</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h4>Maison Léonard — Boulangerie</h4>
+        <p>
+          Les produits du jour, les horaires d'ouverture jour par jour, les
+          avis clients et la commande par téléphone. Pensé pour être lu au
+          comptoir, sur un téléphone, en dix secondes.
+        </p>
+        <ul class="project-stack">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li>
+        </ul>
+        <a href="demos/boulangerie.html" class="project-link"
+           target="_blank" rel="noopener">Voir le site <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top">
+          <span class="project-tag">Démo — page unique</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h4>Garage Vaillant — Mécanique</h4>
+        <p>
+          Prestations détaillées, chiffres clés animés, avis clients et accès
+          à l'atelier. Le téléphone reste affiché en permanence : c'est par
+          là que tout commence dans ce métier.
+        </p>
+        <ul class="project-stack">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li>
+        </ul>
+        <a href="demos/garage.html" class="project-link"
+           target="_blank" rel="noopener">Voir le site <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top">
+          <span class="project-tag">Démo — page unique</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h4>Studio Meraki — Coiffeur &amp; barbier</h4>
+        <p>
+          Même métier que Racine, format opposé : une seule page, une
+          direction artistique sombre et dorée. De quoi comparer deux
+          traitements d'un même commerce.
+        </p>
+        <ul class="project-stack">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li>
+        </ul>
+        <a href="demos/coiffeur.html" class="project-link"
+           target="_blank" rel="noopener">Voir le site <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+
+    <h3 class="projects-group reveal">
+      <span class="projects-group-label">03</span>
+      Applications
+    </h3>
+
+    <div class="projects">
+      <article class="project reveal">
+        <div class="project-top">
+          <span class="project-tag">Application web</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h4>Application web collaborative</h4>
+        <p>
+          Application complète développée avec Vue.js, Node.js et MySQL :
+          interface dynamique, gestion des données et travail en équipe.
+        </p>
+        <ul class="project-stack">
+          <li>Vue.js</li><li>Node.js</li><li>MySQL</li>
+        </ul>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top">
+          <span class="project-tag">Application mobile</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h4>Application mobile Android</h4>
+        <p>
+          Conception et développement d'une application mobile en Kotlin,
+          reliée à un back-end PHP, en coordination avec un site web.
+        </p>
+        <ul class="project-stack">
+          <li>Kotlin</li><li>PHP</li><li>API</li>
+        </ul>
+      </article>
+
+      <article class="project project-cta reveal">
+        <div class="project-top">
+          <span class="project-tag">Votre projet</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h4>Cet emplacement vous attend</h4>
+        <p>
+          Vous avez un projet de site ou d'application ?
+          Discutons-en et donnons-lui vie.
+        </p>
+        <a href="index.html#contact" class="project-link">Me contacter <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-mark" aria-hidden="true">&rsaquo;_</span>
+        <span class="logo-text">eloi<span class="dim">.</span>dupasquier</span>
+      </a>
+      <p>Développeur web freelance — sites &amp; applications sur mesure.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Navigation pied de page">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#approche">Approche</a>
+      <a href="realisations.html">Réalisations</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="footer-legal">
+      <p>Eloi Dupasquier · Micro-entreprise</p>
+      <p class="dim">
+        <a href="mentions-legales.html" class="dim-link">Mentions légales</a> ·
+        <a href="confidentialite.html" class="dim-link">Confidentialité</a>
+      </p>
+      <p class="dim">© <span id="year">2026</span> — Conçu &amp; développé maison.</p>
+    </div>
+  </div>
+  <a href="#top" class="to-top" aria-label="Revenir en haut">↑</a>
+</footer>
+
+<script src="script.js"></script>
+</html>

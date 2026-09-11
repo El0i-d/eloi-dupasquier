@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garage Vaillant — Mécanique toutes marques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --acier:#15181C;
+  --acier-2:#1E232A;
+  --acier-3:#2A3038;
+  --blanc:#F2F4F6;
+  --gris:#8B949E;
+  --orange:#FF6B1A;
+  --orange-2:#FF8940;
+  --vert:#3DD68C;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--blanc);color:var(--acier);
+  font-family:'Archivo',sans-serif;font-size:17px;line-height:1.6;overflow-x:hidden;
+}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+.mono{font-family:'Roboto Mono',monospace}
+
+/* ---------- TOP BAR ---------- */
+.topbar{
+  background:var(--acier);color:var(--gris);font-size:12.5px;
+  padding:9px 0;letter-spacing:.04em;
+}
+.topbar-in{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;text-align:center}
+.topbar b{color:var(--vert);font-weight:600}
+
+/* ---------- NAV ---------- */
+nav{
+  position:sticky;top:0;z-index:100;background:var(--blanc);
+  border-bottom:3px solid var(--acier);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;max-width:1160px;margin:0 auto;gap:16px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo-mark{
+  width:38px;height:38px;background:var(--orange);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Archivo Black',sans-serif;color:#fff;font-size:19px;
+  clip-path:polygon(0 0,100% 0,100% 76%,76% 100%,0 100%);
+}
+.logo-txt{font-family:'Archivo Black',sans-serif;font-size:19px;letter-spacing:-.02em;line-height:1}
+.logo-txt small{display:block;font-family:'Roboto Mono',monospace;font-size:9.5px;letter-spacing:.22em;color:var(--gris);font-weight:400;margin-top:3px}
+.nav-links{display:none;gap:26px;font-size:14px;font-weight:600;letter-spacing:.02em}
+.nav-links a{color:var(--acier);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+.nav-links a:hover{border-color:var(--orange)}
+.nav-tel{
+  background:var(--acier);color:var(--blanc);text-decoration:none;
+  padding:12px 20px;font-weight:700;font-size:14.5px;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:8px;transition:background .2s;
+  clip-path:polygon(0 0,100% 0,100% 70%,92% 100%,0 100%);
+}
+.nav-tel:hover{background:var(--orange)}
+@media(min-width:920px){.nav-links{display:flex}}
+
+/* ---------- HERO ---------- */
+header{
+  background:var(--acier);color:var(--blanc);position:relative;overflow:hidden;
+  padding:66px 0 74px;
+}
+header::before{
+  content:'';position:absolute;inset:0;opacity:.5;
+  background-image:repeating-linear-gradient(45deg,rgba(255,107,26,.06) 0 2px,transparent 2px 12px);
+}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
+@media(min-width:940px){.hero-in{grid-template-columns:1.15fr .85fr}header{padding:86px 0 94px}}
+.badge{
+  display:inline-flex;align-items:center;gap:9px;background:rgba(255,107,26,.14);
+  border-left:3px solid var(--orange);padding:8px 15px;margin-bottom:26px;
+  font-family:'Roboto Mono',monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-2);
+  animation:slideIn .7s both;
+}
+h1{
+  font-family:'Archivo Black',sans-serif;
+  font-size:clamp(40px,10vw,82px);line-height:.96;letter-spacing:-.035em;
+  margin-bottom:22px;animation:slideIn .7s .1s both;
+}
+h1 u{text-decoration:none;color:var(--orange);position:relative}
+h1 u::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:6px;background:var(--orange);opacity:.25}
+.hero-p{color:var(--gris);font-size:18.5px;max-width:450px;margin-bottom:34px;animation:slideIn .7s .2s both}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;animation:slideIn .7s .3s both}
+.btn{
+  padding:16px 28px;text-decoration:none;font-weight:700;font-size:15px;
+  display:inline-flex;align-items:center;gap:9px;transition:transform .2s,background .2s;
+  clip-path:polygon(0 0,100% 0,100% 72%,93% 100%,0 100%);
+}
+.btn-o{background:var(--orange);color:#fff}
+.btn-o:hover{background:var(--orange-2);transform:translateY(-3px)}
+.btn-w{background:transparent;color:var(--blanc);border:2px solid rgba(242,244,246,.3);clip-path:none}
+.btn-w:hover{border-color:var(--blanc);transform:translateY(-3px)}
+@keyframes slideIn{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+
+/* carte devis */
+.quote-card{
+  background:var(--acier-2);border:1px solid rgba(242,244,246,.12);
+  padding:30px 26px;animation:slideIn .7s .4s both;
+}
+.quote-card h3{font-family:'Archivo Black',sans-serif;font-size:19px;margin-bottom:6px}
+.quote-card>p{color:var(--gris);font-size:14.5px;margin-bottom:22px}
+.qrow{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(242,244,246,.09);font-size:15px}
+.qrow:last-of-type{border:none}
+.qrow span{color:var(--gris)}
+.qrow b{font-family:'Roboto Mono',monospace;font-weight:500;color:var(--orange-2)}
+.quote-card .btn{width:100%;justify-content:center;margin-top:20px}
+
+/* ---------- SERVICES ---------- */
+section{padding:84px 0}
+.sec-head{margin-bottom:46px}
+.sec-tag{
+  font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:12px;
+  display:flex;align-items:center;gap:12px;
+}
+.sec-tag::after{content:'';height:2px;flex:1;max-width:90px;background:var(--orange);opacity:.35}
+h2{font-family:'Archivo Black',sans-serif;font-size:clamp(30px,6vw,50px);line-height:1.02;letter-spacing:-.03em}
+.svc{display:grid;grid-template-columns:1fr;gap:2px;background:var(--acier);border:2px solid var(--acier)}
+@media(min-width:620px){.svc{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.svc{grid-template-columns:repeat(3,1fr)}}
+.svc-i{background:var(--blanc);padding:32px 26px;transition:background .25s,color .25s;position:relative}
+.svc-i:hover{background:var(--acier);color:var(--blanc)}
+.svc-i:hover p{color:var(--gris)}
+.svc-i:hover .svc-n{color:var(--orange)}
+.svc-n{font-family:'Roboto Mono',monospace;font-size:12px;color:var(--gris);letter-spacing:.14em;margin-bottom:16px;transition:color .25s}
+.svc-i h3{font-family:'Archivo Black',sans-serif;font-size:20px;margin-bottom:9px;letter-spacing:-.02em}
+.svc-i p{font-size:15px;color:#5A636D;line-height:1.55;transition:color .25s}
+
+/* ---------- POURQUOI ---------- */
+.why{background:var(--acier-2);color:var(--blanc)}
+.why h2{color:var(--blanc)}
+.why-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:14px}
+@media(min-width:760px){.why-grid{grid-template-columns:repeat(4,1fr)}}
+.why-i{border-top:3px solid var(--orange);padding-top:20px}
+.why-i b{display:block;font-family:'Archivo Black',sans-serif;font-size:34px;color:var(--orange);line-height:1;margin-bottom:10px}
+.why-i span{font-size:15px;color:var(--gris);line-height:1.5;display:block}
+
+/* ---------- INFOS ---------- */
+.info-grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--acier);border:2px solid var(--acier)}
+@media(min-width:840px){.info-grid{grid-template-columns:1fr 1fr}}
+.info-c{background:var(--blanc);padding:40px 30px}
+@media(min-width:840px){.info-c{padding:46px 44px}}
+.info-c h3{font-family:'Archivo Black',sans-serif;font-size:22px;margin-bottom:22px;letter-spacing:-.02em}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid #DCE1E6;font-size:15.5px}
+.hours li:last-child{border:none}
+.hours .d{font-weight:600}
+.hours .h{font-family:'Roboto Mono',monospace;font-size:14px;white-space:nowrap}
+.hours li.now{color:var(--orange)}
+.hours li.now .h{font-weight:500}
+.hours .off{color:#A8B0B8}
+.addr{font-size:17px;line-height:1.85;margin-bottom:22px}
+.addr strong{display:block;font-family:'Archivo Black',sans-serif;font-size:19px;margin-bottom:6px;letter-spacing:-.02em}
+.addr a{color:var(--orange);text-decoration:none;font-weight:700}
+.map{
+  width:100%;height:185px;position:relative;overflow:hidden;border:2px solid var(--acier);
+  background:
+    linear-gradient(rgba(21,24,28,.07) 1px,transparent 1px) 0 0/100% 22px,
+    linear-gradient(90deg,rgba(21,24,28,.07) 1px,transparent 1px) 0 0/22px 100%,
+    #E4E8EC;
+}
+.map::after{
+  content:'';position:absolute;left:50%;top:50%;width:16px;height:16px;background:var(--orange);
+  transform:translate(-50%,-50%);box-shadow:0 0 0 0 rgba(255,107,26,.5);animation:pin 2.4s ease-out infinite;
+}
+@keyframes pin{0%{box-shadow:0 0 0 0 rgba(255,107,26,.5)}70%{box-shadow:0 0 0 26px rgba(255,107,26,0)}100%{box-shadow:0 0 0 0 rgba(255,107,26,0)}}
+
+/* ---------- AVIS ---------- */
+.avis-g{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:760px){.avis-g{grid-template-columns:repeat(3,1fr)}}
+.avis{background:#fff;border:2px solid var(--acier);padding:26px 24px;position:relative}
+.avis::before{content:'';position:absolute;left:-2px;top:-2px;width:44px;height:5px;background:var(--orange)}
+.st{color:var(--orange);font-size:14px;letter-spacing:.12em;margin-bottom:12px}
+.avis p{font-size:15.5px;line-height:1.6;margin-bottom:15px}
+.avis cite{font-style:normal;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--gris)}
+
+/* ---------- FINAL ---------- */
+.final{background:var(--orange);color:#fff;text-align:center}
+.final h2{color:#fff;margin-bottom:14px}
+.final p{max-width:460px;margin:0 auto 30px;font-size:18px;opacity:.94}
+.final .btn{background:var(--acier);color:#fff}
+.final .btn:hover{background:#000}
+
+footer{background:var(--acier);color:var(--gris);padding:34px 0 62px;font-size:14px}
+.foot-in{display:flex;flex-direction:column;gap:12px}
+@media(min-width:700px){.foot-in{flex-direction:row;justify-content:space-between;align-items:center}}
+.foot-in a{color:var(--orange);text-decoration:none}
+
+.callbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--acier);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:9px;
+}
+.callbar a{flex:1;text-align:center;padding:13px;text-decoration:none;font-weight:700;font-size:15px}
+.cb1{background:var(--orange);color:#fff}
+.cb2{border:2px solid rgba(242,244,246,.3);color:var(--blanc)}
+@media(min-width:920px){.callbar{display:none}}
+@media(max-width:919px){body{padding-bottom:76px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span><b>●</b> Devis gratuit sous 24 h</span>
+    <span>Toutes marques</span>
+    <span>Véhicule de prêt disponible</span>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-in">
+    <div class="logo">
+      <div class="logo-mark">V</div>
+      <div class="logo-txt">VAILLANT<small>GARAGE AUTO</small></div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Prestations</a>
+      <a href="#pourquoi">Le garage</a>
+      <a href="#infos">Horaires</a>
+      <a href="#avis">Avis</a>
+    </div>
+    <a href="tel:+33300000000" class="nav-tel">📞 03 00 00 00 00</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap hero-in">
+    <div>
+      <div class="badge">◆ Mécanique · Carrosserie · Entretien</div>
+      <h1>Votre voiture<br>entre de <u>bonnes mains</u>.</h1>
+      <p class="hero-p">Garage indépendant depuis 1998. On vous explique ce qu'on fait, on annonce le prix avant, et on respecte le devis. Toutes marques, sans perte de garantie constructeur.</p>
+      <div class="hero-cta">
+        <a href="tel:+33300000000" class="btn btn-o">Demander un devis</a>
+        <a href="#services" class="btn btn-w">Nos prestations</a>
+      </div>
+    </div>
+    <div class="quote-card">
+      <h3>Tarifs indicatifs</h3>
+      <p>Prix TTC, main d'œuvre comprise.</p>
+      <div class="qrow"><span>Vidange + filtre</span><b>69 €</b></div>
+      <div class="qrow"><span>Plaquettes avant</span><b>dès 120 €</b></div>
+      <div class="qrow"><span>Diagnostic électronique</span><b>45 €</b></div>
+      <div class="qrow"><span>Montage 4 pneus</span><b>60 €</b></div>
+      <div class="qrow"><span>Recharge climatisation</span><b>89 €</b></div>
+      <a href="tel:+33300000000" class="btn btn-o">Devis personnalisé →</a>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Nos prestations</div>
+      <h2>Ce qu'on fait à l'atelier</h2>
+    </div>
+    <div class="svc">
+      <div class="svc-i"><div class="svc-n">01</div><h3>Entretien courant</h3><p>Vidange, filtres, bougies, courroie de distribution. Révision complète selon le carnet constructeur.</p></div>
+      <div class="svc-i"><div class="svc-n">02</div><h3>Freinage</h3><p>Plaquettes, disques, étriers, purge du circuit. Contrôle gratuit à chaque passage à l'atelier.</p></div>
+      <div class="svc-i"><div class="svc-n">03</div><h3>Diagnostic</h3><p>Valise électronique multimarque. On identifie la panne avant de démonter quoi que ce soit.</p></div>
+      <div class="svc-i"><div class="svc-n">04</div><h3>Pneumatiques</h3><p>Vente, montage, équilibrage, géométrie. Toutes marques, du premier prix au haut de gamme.</p></div>
+      <div class="svc-i"><div class="svc-n">05</div><h3>Climatisation</h3><p>Recharge, recherche de fuite, remplacement du filtre habitacle. Gaz R134a et R1234yf.</p></div>
+      <div class="svc-i"><div class="svc-n">06</div><h3>Pré-contrôle technique</h3><p>On vérifie les 133 points avant votre passage, et on corrige ce qui bloque. Contre-visite évitée.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="pourquoi">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Le garage</div>
+      <h2>Pourquoi nos clients reviennent</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-i"><b>1998</b><span>Le garage est tenu par la même famille depuis l'ouverture.</span></div>
+      <div class="why-i"><b>–30%</b><span>En moyenne face aux tarifs concession, à qualité équivalente.</span></div>
+      <div class="why-i"><b>24 h</b><span>Délai maximum pour recevoir votre devis détaillé.</span></div>
+      <div class="why-i"><b>4,8★</b><span>Note moyenne sur 210 avis clients Google.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="infos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Nous trouver</div>
+      <h2>Horaires & accès</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-c">
+        <h3>OUVERTURE</h3>
+        <ul class="hours">
+          <li class="now"><span class="d">Lundi</span><span class="h">8h00–12h00 · 14h00–18h30</span></li>
+          <li><span class="d">Mardi</span><span class="h">8h00–12h00 · 14h00–18h30</span></li>
+          <li><span class="d">Mercredi</span><span class="h">8h00–12h00 · 14h00–18h30</span></li>
+          <li><span class="d">Jeudi</span><span class="h">8h00–12h00 · 14h00–18h30</span></li>
+          <li><span class="d">Vendredi</span><span class="h">8h00–12h00 · 14h00–18h30</span></li>
+          <li><span class="d">Samedi</span><span class="h">8h00–12h00</span></li>
+          <li><span class="d">Dimanche</span><span class="h off">Fermé</span></li>
+        </ul>
+      </div>
+      <div class="info-c">
+        <h3>ADRESSE</h3>
+        <div class="addr">
+          <strong>7 rue de l'Industrie</strong>
+          Zone artisanale — 00000 Ville-Exemple<br>
+          <a href="tel:+33300000000">03 00 00 00 00</a>
+        </div>
+        <div class="map"></div>
+        <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="btn btn-o" style="margin-top:20px">Itinéraire →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="avis" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Avis clients</div>
+      <h2>Ils nous font confiance</h2>
+    </div>
+    <div class="avis-g">
+      <div class="avis">
+        <div class="st">★★★★★</div>
+        <p>Devis trois fois moins cher que la concession, et le travail est impeccable. Il prend le temps d'expliquer, c'est rare.</p>
+        <cite>— Patrick M.</cite>
+      </div>
+      <div class="avis">
+        <div class="st">★★★★★</div>
+        <p>Tombé en panne un vendredi soir, voiture réparée le lundi midi avec un véhicule de prêt entre-temps. Impeccable.</p>
+        <cite>— Nadia B.</cite>
+      </div>
+      <div class="avis">
+        <div class="st">★★★★★</div>
+        <p>Le devis annoncé a été respecté au centime près. Aucune mauvaise surprise à la facture, je recommande.</p>
+        <cite>— Christophe V.</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Un bruit suspect ? Un voyant allumé ?</h2>
+    <p>Appelez-nous, on vous dit tout de suite si c'est urgent et on vous trouve un créneau.</p>
+    <a href="tel:+33300000000" class="btn">📞 03 00 00 00 00</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>GARAGE VAILLANT — 7 rue de l'Industrie, 00000 Ville-Exemple</div>
+    <div>Démonstration réalisée par <a href="https://edupasquier.me" target="_blank" rel="noopener">Eloi&nbsp;Dupasquier</a></div>
+  </div>
+
+  <div class="wrap demo-note">
+    <p>
+      <strong>Projet fictif.</strong> Garage Vaillant n'existe pas. Cette page a été créée pour montrer à quoi peut ressembler le site d'un garage indépendant. L'adresse, le numéro de
+      téléphone et les avis qui y figurent sont inventés et ne correspondent
+      à aucun commerce réel. Aucune donnée n'est collectée sur cette page.
+    </p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+33300000000" class="cb1">📞 Appeler</a>
+  <a href="#infos" class="cb2">📍 Itinéraire</a>
+</div>
+
+
+<style>
+/* ---------- INTERACTIVITÉ AU DÉFILEMENT ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-38px);transition:opacity .9s cubic-bezier(.16,.8,.3,1),transform .9s cubic-bezier(.16,.8,.3,1)}
+.reveal-l.in{opacity:1;transform:none}
+.reveal-s{opacity:0;transform:translateY(26px) scale(.97);transition:opacity .75s cubic-bezier(.16,.8,.3,1),transform .75s cubic-bezier(.16,.8,.3,1)}
+.reveal-s.in{opacity:1;transform:none}
+
+/* barre de progression de lecture */
+#prog{
+  position:fixed;top:0;left:0;height:3px;width:0%;z-index:9999;
+  background:linear-gradient(90deg,#FF6B1A,#FF8940);
+  transition:width .1s linear;pointer-events:none;
+}
+
+/* nav compacte au scroll */
+nav{transition:box-shadow .35s,padding .35s}
+nav.scrolled{box-shadow:0 6px 28px -12px rgba(0,0,0,.28)}
+nav.scrolled .nav-in{padding-top:9px;padding-bottom:9px}
+
+/* titres de section : trait qui se déploie */
+h2{position:relative}
+h2.line-in::after{
+  content:'';position:absolute;left:0;bottom:-14px;height:3px;width:0;
+  background:#FF6B1A;transition:width 1s .25s cubic-bezier(.16,.8,.3,1);
+}
+h2.line-in.in::after{width:72px}
+
+/* retour en haut */
+#totop{
+  position:fixed;right:18px;bottom:96px;z-index:180;width:46px;height:46px;
+  border:none;border-radius:50%;background:#FF6B1A;color:#fff;font-size:19px;
+  cursor:pointer;opacity:0;pointer-events:none;transform:translateY(14px);
+  transition:opacity .35s,transform .35s;box-shadow:0 8px 22px -8px rgba(0,0,0,.5);
+}
+#totop.show{opacity:1;pointer-events:auto;transform:none}
+#totop:hover{transform:translateY(-3px)}
+@media(min-width:920px){#totop{bottom:26px}}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal-l,.reveal-s{opacity:1!important;transform:none!important;transition:none}
+  #prog{display:none}
+}
+
+/* ---------- MENTION DE PROJET FICTIF ---------- */
+.demo-note{
+  margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);
+  max-width:70ch;font-size:13px;line-height:1.65;color:var(--gris);
+}
+.demo-note strong{color:var(--orange)}
+
+/* ---------- CORRECTIONS PETITS ÉCRANS ---------- */
+@media(max-width:560px){
+  /* Le numéro affiché dans l'en-tête poussait la barre au-delà de
+     l'écran. La barre d'appel fixe en bas de page le rend de toute
+     façon redondant sur mobile. */
+  .nav-tel{display:none}
+}
+@media(max-width:839px){
+  /* Sans min-width, une cellule de grille refuse de descendre sous la
+     largeur de son contenu : la colonne débordait du conteneur. */
+  .info-c{min-width:0;padding:34px 22px}
+  /* Journée coupée (« 8h00–12h00 · 14h00–18h30 ») : la ligne doit
+     pouvoir se replier plutôt que d'élargir toute la colonne. */
+  .hours li{flex-wrap:wrap;gap:2px 14px;padding:9px 0}
+  /* Repliés sur une seconde ligne, les horaires restent alignés à
+     droite comme dans la colonne d'origine. */
+  .hours .h{white-space:normal;margin-left:auto}
+}
+</style>
+
+<div id="prog"></div>
+<button id="totop" aria-label="Retour en haut">↑</button>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 1. Attribution automatique des classes de révélation */
+  document.querySelectorAll('.sec-head').forEach(function(el){ el.classList.add('reveal-l'); });
+  document.querySelectorAll('h2').forEach(function(el){ el.classList.add('line-in'); });
+  document.querySelectorAll('.card,.avis,.svc-i,.mb,.why-i,.stat,.quote-card,.info,.infos,.info-grid,.presta-row,.quote,.final .wrap')
+    .forEach(function(el){ if(!el.closest('header')) el.classList.add('reveal-s'); });
+  document.querySelectorAll('.map,.hours,.addr').forEach(function(el){ el.classList.add('reveal'); });
+
+  /* 2. Décalage en cascade entre voisins */
+  ['.grid','.svc','.team','.avis-grid','.avis-g','.why-grid','.stats','.presta']
+    .forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(parent){
+        Array.prototype.forEach.call(parent.children, function(child, i){
+          child.style.transitionDelay = Math.min(i * 80, 480) + 'ms';
+        });
+      });
+    });
+
+  /* 3. Observer d'entrée dans le viewport */
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-s,.line-in').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-s,.line-in').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* 4. Compteurs animés (chiffres clés) */
+  function animateCount(el){
+    var raw = el.textContent.trim();
+    var m = raw.match(/^([^\d]*)([\d]+(?:[.,][\d]+)?)(.*)$/);
+    if(!m) return;
+    var pre = m[1], target = parseFloat(m[2].replace(',', '.')), post = m[3];
+    var dec = (m[2].indexOf(',') > -1 || m[2].indexOf('.') > -1) ? 1 : 0;
+    var start = null, dur = 1400;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = (target * eased).toFixed(dec).replace('.', ',');
+      el.textContent = pre + val + post;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window && !reduce){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); }
+      });
+    }, {threshold:.6});
+    document.querySelectorAll('.stat b,.why-i b').forEach(function(el){ cio.observe(el); });
+  }
+
+  /* 5. Barre de progression + nav + bouton retour */
+  var prog = document.getElementById('prog');
+  var navEl = document.querySelector('nav');
+  var top = document.getElementById('totop');
+  var ticking = false;
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if(prog) prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    if(navEl) navEl.classList.toggle('scrolled', y > 40);
+    if(top) top.classList.toggle('show', y > 600);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
+  }, {passive:true});
+  onScroll();
+  if(top) top.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+  /* 6. Léger parallaxe sur le décor du hero */
+  var art = document.querySelector('.hero-art, .halo');
+  if(art && !reduce && window.innerWidth > 900){
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      if(y < 900) art.style.transform = 'translateY(' + (y * 0.18) + 'px)';
+    }, {passive:true});
+  }
+})();
+</script>
+
+</body>
+</html>
