@@ -22,7 +22,7 @@
 | Authentification | **nuxt-auth-utils** | Session en cookie chiffré, mot de passe haché, et **passkeys** (Face ID sur iPhone) en V2. Pas d'inscription : un seul compte, créé par script. |
 | PDF devis/factures | **Gotenberg** (conteneur Docker) | Je fais le gabarit en HTML/CSS (mon point fort), Gotenberg le convertit en PDF. Il sait produire du **PDF/A-3 avec pièce jointe XML** → prêt pour Factur-X (facture électronique). |
 | Style | **CSS natif** (variables), pas de framework UI | Reprendre les tokens du site vitrine (`styles.css` : sombre, monospace, accent `#c6f24e`) avec une variante claire pour les PDF. |
-| Hébergement | **Mon VPS**, Docker Compose : `app` + `gotenberg` + `caddy` | Caddy = reverse proxy avec HTTPS automatique (Let's Encrypt), config de 3 lignes. |
+| Hébergement | **Mon VPS** (géré avec **aaPanel**), Docker Compose : `app` + `gotenberg` | aaPanel fait déjà tourner Nginx sur les ports 80/443 : on s'en sert comme reverse proxy + certificat Let's Encrypt, au lieu d'ajouter Caddy (qui entrerait en conflit sur ces ports). |
 | URL | `gestion.edupasquier.me` | Enregistrement DNS `A` vers l'IP du VPS. N'affecte pas le site vitrine (GitHub Pages). |
 | Sauvegardes | `sqlite3 .backup` quotidien + **restic** vers un stockage externe | Obligation de conserver les factures **10 ans**. Tester la restauration. |
 
@@ -216,8 +216,7 @@ gestion/
 ├── public/               manifest.webmanifest, icônes, apple-touch-icon
 ├── scripts/              create-user.ts, backup.sh
 ├── Dockerfile
-├── compose.yaml          app + gotenberg + caddy
-├── Caddyfile
+├── compose.yaml          app + gotenberg (ports liés à 127.0.0.1 uniquement)
 ├── .env.example
 └── CLAUDE.md             ← ce document
 ```
@@ -227,24 +226,42 @@ Données persistées sur le VPS (volume Docker) : `data/gestion.sqlite` et
 
 ---
 
-## 6. Déploiement sur le VPS
+## 6. Déploiement sur le VPS (aaPanel)
 
-1. Prérequis : Docker + plugin Compose, pare-feu (ports 22, 80, 443
-   seulement), connexion SSH par clé, mises à jour de sécurité automatiques.
-2. DNS : `gestion.edupasquier.me` → `A` vers l'IP du VPS.
-3. `Caddyfile` :
-   ```
-   gestion.edupasquier.me {
-       reverse_proxy app:3000
-   }
-   ```
-4. Déployer : `git pull && docker compose up -d --build` (V1, à la main).
-   Plus tard : GitHub Actions → image sur GHCR → `docker compose pull`.
-5. Secrets dans `.env` sur le VPS uniquement (`NUXT_SESSION_PASSWORD`,
+État du VPS : Linux + **aaPanel** (Nginx sur 80/443) + **OpenClaw** installé.
+
+1. **Docker** : l'installer depuis aaPanel (App Store → Docker) ou via le
+   script officiel `get.docker.com`. Vérifier `docker compose version`.
+2. **DNS** : `gestion.edupasquier.me` → enregistrement `A` vers l'IP du VPS.
+3. **Conteneurs** : dans `compose.yaml`, publier l'app **uniquement en
+   local** (`127.0.0.1:3000:3000`) ; Gotenberg n'est pas publié du tout
+   (joignable par l'app via le réseau Docker, `http://gotenberg:3000`).
+4. **aaPanel → Website → Add site** `gestion.edupasquier.me`, puis :
+   - onglet **Reverse proxy** → cible `http://127.0.0.1:3000` ;
+   - onglet **SSL** → Let's Encrypt + « Force HTTPS ».
+5. **Déployer** : `git pull && docker compose up -d --build` (V1, à la
+   main, depuis `/www/wwwroot/gestion` ou `/opt/gestion`). Plus tard :
+   GitHub Actions → image sur GHCR → `docker compose pull`.
+6. **Secrets** dans `.env` sur le VPS uniquement (`NUXT_SESSION_PASSWORD`,
    etc.) ; `.env.example` versionné.
-6. Sauvegarde : cron quotidien → `sqlite3 gestion.sqlite ".backup …"` +
-   dossier `pdf/` → `restic` vers un stockage externe (Backblaze B2, autre
-   serveur…). Rétention longue (factures : 10 ans).
+7. **Sécurité du serveur** : pare-feu aaPanel limité à 22, 80, 443 et au
+   port du panel ; **panel aaPanel** sur un port non standard, avec
+   authentification à deux facteurs et, si possible, restreint à mon IP ;
+   SSH par clé uniquement ; mises à jour automatiques.
+8. **Sauvegarde** : tâche planifiée (aaPanel → Cron) quotidienne →
+   `sqlite3 gestion.sqlite ".backup …"` + dossier `pdf/` → `restic` vers un
+   stockage **externe au VPS** (Backblaze B2, autre serveur…). Rétention
+   longue (factures : 10 ans). Tester une restauration.
+
+### ⚠️ Cohabitation avec OpenClaw
+
+OpenClaw est un agent IA qui peut exécuter des commandes sur la machine : il
+a donc potentiellement accès aux données du dashboard (clients, factures).
+- Le faire tourner sous un **utilisateur Linux dédié**, sans `sudo`, qui ne
+  peut pas lire le dossier de données du dashboard (`chmod 700`, propriétaire
+  distinct) ni utiliser Docker (pas dans le groupe `docker` = root déguisé).
+- Ne jamais exposer son interface/passerelle sur Internet sans
+  authentification.
 
 ## 7. PWA / iPhone
 
@@ -258,8 +275,10 @@ Données persistées sur le VPS (volume Docker) : `data/gestion.sqlite` et
 
 ## 8. Points ouverts
 
-- [ ] Specs du VPS (OS, RAM) et ce qui y tourne déjà (reverse proxy
-      existant ? ports occupés ?)
+- [x] VPS : aaPanel (Nginx) + OpenClaw → reverse proxy via aaPanel
+- [ ] Distribution Linux et RAM du VPS (Gotenberg ≈ 300–500 Mo en pointe)
+- [ ] Créer le dépôt privé `el0i-d/gestion` (création impossible depuis
+      Claude : à faire à la main sur GitHub)
 - [ ] Choix de la Plateforme Agréée (réception dès maintenant, émission 2027)
 - [ ] Nature fiscale de l'activité (BNC ou BIC) → taux de cotisations URSSAF
 - [ ] Périodicité de déclaration URSSAF (mensuelle ou trimestrielle)

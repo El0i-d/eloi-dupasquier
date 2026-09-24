@@ -28,7 +28,7 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
 |---|---|
 | GitHub (`el0i-d`) | Code source ; site vitrine hébergé sur GitHub Pages |
 | Domaine `edupasquier.me` | Pointe vers GitHub Pages (fichier `CNAME`) |
-| VPS personnel | Disponible pour héberger des apps (Docker). OS / specs : _à compléter_ |
+| VPS personnel | Géré avec **aaPanel** (Nginx en 80/443, SSL Let's Encrypt) ; **OpenClaw** installé. Apps en Docker derrière le reverse proxy d'aaPanel |
 | Web3Forms | Formulaire de contact du site vitrine (sans backend) |
 
 ### Comment je veux qu'on travaille
@@ -84,5 +84,5 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
 Outil perso pour gérer prospects, clients, devis et factures, accessible
 depuis l'iPhone. **Cahier des charges technique complet :
 [`docs/dashboard-gestion.md`](docs/dashboard-gestion.md)** — à lire avant
-toute session sur ce sujet. Le code vivra dans un dépôt séparé (privé) ; ce
-document y deviendra son `CLAUDE.md`.
+toute session sur ce sujet. Framework validé : **Nuxt**. Le code vivra dans
+le dépôt privé `el0i-d/gestion` ; ce document y deviendra son `CLAUDE.md`.
