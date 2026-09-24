@@ -27,7 +27,7 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
 | Ressource | Usage actuel |
 |---|---|
 | GitHub (`el0i-d`) | Code source ; site vitrine hébergé sur GitHub Pages |
-| Domaine `edupasquier.me` | Pointe vers GitHub Pages (fichier `CNAME`) |
+| Domaine `edupasquier.me` | DNS géré chez **Namecheap** (Advanced DNS). `@` et `www` → GitHub Pages (fichier `CNAME`) ; sous-domaines libres pour le VPS (ex. `gestion` → IP du VPS) |
 | VPS personnel | **Debian 13**, **8 Go de RAM**, géré avec **aaPanel** (Nginx en 80/443, SSL Let's Encrypt) ; **OpenClaw** installé. Apps en Docker derrière le reverse proxy d'aaPanel |
 | Web3Forms | Formulaire de contact du site vitrine (sans backend) |
 
