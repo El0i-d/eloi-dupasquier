@@ -1,0 +1,6 @@
+# Configuration GitHub Pages (Jekyll).
+# Exclut les fichiers internes du site publié sur edupasquier.me.
+exclude:
+  - CLAUDE.md
+  - README.md
+  - docs/
