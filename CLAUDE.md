@@ -19,7 +19,7 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
   Node.js.
 - Régime fiscal : micro-entreprise, **franchise en base de TVA** (art. 293 B
   du CGI) → aucune TVA facturée.
-- **SIREN obtenu** (numéro : _à renseigner_).
+- **SIRET : 109 871 103 00015** (SIREN : 109 871 103).
 - Contact pro : `eloi.dupasquier@proton.me` · domaine : `edupasquier.me`.
 
 ### Infrastructure dont je dispose
