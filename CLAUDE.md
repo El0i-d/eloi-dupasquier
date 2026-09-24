@@ -19,7 +19,7 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
   Node.js.
 - Régime fiscal : micro-entreprise, **franchise en base de TVA** (art. 293 B
   du CGI) → aucune TVA facturée.
-- SIRET : immatriculation en cours (à renseigner dès réception).
+- **SIREN obtenu** (numéro : _à renseigner_).
 - Contact pro : `eloi.dupasquier@proton.me` · domaine : `edupasquier.me`.
 
 ### Infrastructure dont je dispose
@@ -58,7 +58,8 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
   41 250 €), plafond micro-entreprise services ≈ 77 700 €.
 - Facturation électronique : réception obligatoire depuis le 1ᵉʳ sept. 2026,
   **émission obligatoire au 1ᵉʳ sept. 2027** pour les micro-entreprises
-  (via une Plateforme Agréée). Détails dans le `CLAUDE.md` du dépôt `el0i-d/gestion`.
+  (Plateforme Agréée retenue : **Super PDP**). Détails dans le `CLAUDE.md`
+  du dépôt `el0i-d/gestion`.
 
 ---
 
