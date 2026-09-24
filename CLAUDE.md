@@ -58,7 +58,7 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
   41 250 €), plafond micro-entreprise services ≈ 77 700 €.
 - Facturation électronique : réception obligatoire depuis le 1ᵉʳ sept. 2026,
   **émission obligatoire au 1ᵉʳ sept. 2027** pour les micro-entreprises
-  (via une Plateforme Agréée). Détails dans `docs/dashboard-gestion.md`.
+  (via une Plateforme Agréée). Détails dans le `CLAUDE.md` du dépôt `el0i-d/gestion`.
 
 ---
 
@@ -79,10 +79,9 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
   `docs/`) de la publication GitHub Pages — penser à y ajouter tout nouveau
   fichier interne.
 
-## Projet en cours : dashboard de gestion
+## Projet lié : dashboard de gestion
 
-Outil perso pour gérer prospects, clients, devis et factures, accessible
-depuis l'iPhone. **Cahier des charges technique complet :
-[`docs/dashboard-gestion.md`](docs/dashboard-gestion.md)** — à lire avant
-toute session sur ce sujet. Framework validé : **Nuxt**. Le code vivra dans
-le dépôt privé `el0i-d/gestion` ; ce document y deviendra son `CLAUDE.md`.
+Outil perso (prospects, clients, devis, factures) développé en **Nuxt** dans
+le dépôt privé **`el0i-d/gestion`**. Son cahier des charges technique complet
+est le `CLAUDE.md` de ce dépôt : c'est la seule source de vérité, ne pas le
+dupliquer ici.
