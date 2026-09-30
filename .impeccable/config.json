@@ -38,6 +38,24 @@
         ],
         "createdAt": "2026-09-30T17:17:56.277Z",
         "reason": "Faux positif: detecteur suppose fond #ffffff / texte #000000, absents de ce site sombre (--bg #0c0d10, --text #e8e7e1). Mesure DOM reelle sur fond effectif: 458 elements sur 4 pages, 0 sous le seuil WCAG AA. --muted #9a9ca3 = 7.07:1, --muted-2 #7c7e86 = 4.80:1."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-30T17:21:48.709Z",
+        "reason": "Faux positif mesure dans le DOM: la regle signale des conteneurs de liste a padding 0, mais l'inset est porte par les enfants. Ecarts reels texte/bord: .step 22px haut et bas, .stack-line 25px sous le filet, .service 24px. Aucun texte a moins de 22px d'une bordure."
+      },
+      {
+        "rule": "buried-raster",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-30T17:21:55.406Z",
+        "reason": "Faux positif: le grain est un data: URI SVG feTurbulence inline, aucun fichier n'est livre, donc le cout que la regle vise n'existe pas. opacity 0.04 + mix-blend-mode overlay, texture d'ambiance voulue."
       }
     ]
   }
