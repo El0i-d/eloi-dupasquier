@@ -82,7 +82,10 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
 
 ## Projet lié : dashboard de gestion
 
-Outil perso (prospects, clients, devis, factures) développé en **Nuxt** dans
-le dépôt privé **`el0i-d/gestion`**. Son cahier des charges technique complet
-est le `CLAUDE.md` de ce dépôt : c'est la seule source de vérité, ne pas le
-dupliquer ici.
+Outil de gestion (prospects, clients, devis, factures) développé en **Nuxt**
+dans le dépôt privé **`el0i-d/gestion`**. D'abord pour moi, il devient un
+**produit** proposé à d'autres micro-entrepreneurs (décision du 12/10/2026) :
+une app, plusieurs entreprises, accès sur invitation. Une page produit sur ce
+site est prévue (V4, étape 4). Son cahier des charges technique complet est le
+`CLAUDE.md` de ce dépôt : c'est la seule source de vérité, ne pas le dupliquer
+ici.
