@@ -67,8 +67,9 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
 
 - Site **statique** HTML / CSS / JS, sans dépendance ni build. Hébergé sur
   **GitHub Pages** (branche par défaut, domaine via `CNAME`).
-- Direction artistique : « terminal raffiné » — fond sombre, monospace
-  (IBM Plex Mono / Space Mono), accent lime `#c6f24e`. Tous les tokens sont
+- Direction artistique : « Nocturne » — fond sombre `#0b0b0c`, grotesque
+  Instrument Sans pour le texte, IBM Plex Mono réservé aux petites
+  étiquettes, accent lime `#c6f24e` utilisé avec parcimonie. Tous les tokens sont
   dans `:root` en haut de `styles.css`.
 - Pages : `index.html`, `realisations.html`, `gestion.html` (page produit du
   dashboard : démo `demo.edupasquier.me`, accès sur invitation, tarif

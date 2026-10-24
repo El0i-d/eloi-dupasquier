@@ -8,7 +8,7 @@
   content="Devis, factures, encaissements, déclaration URSSAF : une application de gestion pour micro-entrepreneurs, installable sur iPhone, avec vos données hébergées en Europe. Démo en ligne."
 />
 <meta name="author" content="Eloi Dupasquier" />
-<meta name="theme-color" content="#0c0d10" />
+<meta name="theme-color" content="#0b0b0c" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Gestion — le tableau de bord des micro-entrepreneurs" />
@@ -22,14 +22,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap"
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap"
   rel="stylesheet"
 />
 <link rel="stylesheet" href="styles.css" />
-
-<div class="bg-grid" aria-hidden="true"></div>
-<div class="bg-glow" aria-hidden="true"></div>
-<div class="bg-grain" aria-hidden="true"></div>
 
 <a class="skip-link" href="#main">Aller au contenu</a>
 
@@ -38,8 +34,9 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a href="index.html" class="logo" aria-label="Eloi Dupasquier — accueil">
-      <span class="logo-mark" aria-hidden="true">&rsaquo;_</span>
-      <span class="logo-text">eloi<span class="dim">.</span>dupasquier</span>
+      <span class="logo-mark" aria-hidden="true">ed</span>
+      <span class="logo-text">Eloi Dupasquier</span>
+      <span class="logo-tag">EI · Développeur web</span>
     </a>
     <nav class="nav" id="nav" aria-label="Navigation principale">
       <a href="index.html#services">Services</a>
@@ -57,59 +54,42 @@
 <main id="main">
   <!-- ============ HERO ============ -->
   <section class="hero wrap" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <p class="eyebrow reveal">
-        <span class="status-dot" aria-hidden="true"></span>
-        Accès sur invitation · démo ouverte à tous
-      </p>
+    <p class="eyebrow reveal">
+      <span class="status-dot" aria-hidden="true"></span>
+      Accès sur invitation · démo ouverte à tous
+    </p>
 
-      <h1 id="hero-title" class="reveal">
-        Votre gestion de micro-entreprise,
-        <span class="accent">dans votre poche</span>.<span class="caret" aria-hidden="true"></span>
-      </h1>
+    <h1 id="hero-title" class="reveal">
+      Votre gestion de micro&#8209;entreprise.
+      <span class="dim">Dans votre poche.</span>
+    </h1>
 
-      <p class="hero-sub reveal">
+    <div class="hero-row reveal">
+      <p class="hero-sub">
         Contacts, devis, factures, encaissements, montant à déclarer à
         l'URSSAF : tout au même endroit, sur ordinateur comme sur iPhone.
         Une application conçue pour les micro-entrepreneurs en franchise de
         TVA, avec vos données hébergées en Europe.
       </p>
-
-      <div class="hero-actions reveal">
+      <div class="hero-actions">
         <a href="https://demo.edupasquier.me" class="btn btn-primary"
            target="_blank" rel="noopener">Essayer la démo <span aria-hidden="true">→</span></a>
         <a href="index.html?sujet=gestion#contact" class="btn btn-ghost">Demander un accès</a>
       </div>
-
-      <ul class="hero-meta reveal" aria-label="Informations clés">
-        <li><span class="k">01</span> Installable comme une app</li>
-        <li><span class="k">02</span> Données hébergées en Allemagne</li>
-        <li><span class="k">03</span> Export complet à tout moment</li>
-      </ul>
     </div>
 
-    <div class="terminal reveal" aria-hidden="true">
-      <div class="terminal-bar">
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        <span class="terminal-title">demo.edupasquier.me</span>
-      </div>
-      <div class="terminal-body">
-        <p><span class="prompt">gestion</span> <span class="path">~</span> % accueil</p>
-        <p class="out">→ CA encaissé 2026 : 3 140,00 €</p>
-        <p class="out">→ à déclarer URSSAF : 600,00 €</p>
-        <p class="out">→ 2 factures en retard</p>
-        <p class="out">→ 1 devis en attente</p>
-        <p><span class="prompt">gestion</span> <span class="path">~</span> % relances</p>
-        <p class="out">→ 1 facture à relancer</p>
-        <p class="term-live"><span class="prompt">gestion</span> <span class="path">~</span> % <span class="term-cursor"></span></p>
-      </div>
-    </div>
+    <dl class="facts reveal">
+      <div><dt>Installation</dt><dd>Comme une app, sur iPhone</dd></div>
+      <div><dt>Hébergement</dt><dd>En Allemagne (UE)</dd></div>
+      <div><dt>Export</dt><dd>Complet, à tout moment</dd></div>
+      <div><dt>Accès</dt><dd>Sur invitation</dd></div>
+    </dl>
   </section>
 
   <!-- ============ FONCTIONNALITÉS ============ -->
   <section class="section wrap" id="fonctions" aria-labelledby="fonctions-title">
     <div class="section-head reveal">
-      <span class="section-index">// 01</span>
+      <span class="section-index">Fonctionnalités</span>
       <h2 id="fonctions-title">Ce que ça fait</h2>
       <p class="section-lead">
         L'essentiel d'une micro-entreprise, sans usine à gaz : ce dont vous
@@ -187,7 +167,7 @@
   <section class="section wrap" id="donnees" aria-labelledby="donnees-title">
     <div class="about-grid">
       <div class="about-copy reveal">
-        <span class="section-index">// 02</span>
+        <span class="section-index">Données</span>
         <h2 id="donnees-title">Vos données restent les vôtres</h2>
         <p>
           Vos clients et vos factures sont des données sensibles, et vous
@@ -224,7 +204,7 @@
   <!-- ============ DÉMARRER ============ -->
   <section class="section wrap" id="demarrer" aria-labelledby="demarrer-title">
     <div class="section-head reveal">
-      <span class="section-index">// 03</span>
+      <span class="section-index">Démarrer</span>
       <h2 id="demarrer-title">Comment démarrer</h2>
       <p class="section-lead">
         L'accès se fait sur invitation, pour que je puisse prendre le temps
@@ -260,7 +240,7 @@
   <section class="section wrap" id="tarif" aria-labelledby="tarif-title">
     <div class="about-grid">
       <div class="about-copy reveal">
-        <span class="section-index">// 04</span>
+        <span class="section-index">Tarif</span>
         <h2 id="tarif-title">Tarif</h2>
         <p>
           Une mise en service, puis un abonnement mensuel qui comprend
@@ -293,7 +273,7 @@
   <!-- ============ LIMITES ============ -->
   <section class="section wrap" id="limites" aria-labelledby="limites-title">
     <div class="section-head reveal">
-      <span class="section-index">// 05</span>
+      <span class="section-index">Limites</span>
       <h2 id="limites-title">Ce que ça ne fait pas (encore)</h2>
       <p class="section-lead">
         Mieux vaut le savoir avant de vous engager.
@@ -344,8 +324,9 @@
   <div class="wrap footer-inner">
     <div class="footer-brand">
       <a href="index.html" class="logo">
-        <span class="logo-mark" aria-hidden="true">&rsaquo;_</span>
-        <span class="logo-text">eloi<span class="dim">.</span>dupasquier</span>
+        <span class="logo-mark" aria-hidden="true">ed</span>
+        <span class="logo-text">Eloi Dupasquier</span>
+        <span class="logo-tag">EI · Développeur web</span>
       </a>
       <p>Développeur web freelance — sites &amp; applications sur mesure.</p>
     </div>
@@ -359,7 +340,7 @@
     </nav>
 
     <div class="footer-legal">
-      <p>Eloi Dupasquier · Micro-entreprise</p>
+      <p>Eloi Dupasquier EI · Micro-entreprise</p>
       <p class="dim">
         <a href="mentions-legales.html" class="dim-link">Mentions légales</a> ·
         <a href="confidentialite.html" class="dim-link">Confidentialité</a>

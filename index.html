@@ -8,7 +8,7 @@
   content="Développeur web freelance à Belfort. Je conçois et développe des sites vitrines et applications web sur mesure : modernes, rapides et faits pour durer."
 />
 <meta name="author" content="Eloi Dupasquier" />
-<meta name="theme-color" content="#0c0d10" />
+<meta name="theme-color" content="#0b0b0c" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -25,16 +25,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap"
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>
+<!-- Polices des couvertures de projets : `text=` ne charge que les
+     lettres des trois noms d'enseigne, quelques Ko au total. -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bodoni+Moda:ital@1&family=Fraunces&display=swap&text=MaisonL%C3%A9rdRceGAEVINT%20"
   rel="stylesheet"
 />
 
 <link rel="stylesheet" href="styles.css" />
-
-<!-- Background atmosphere layers -->
-<div class="bg-grid" aria-hidden="true"></div>
-<div class="bg-glow" aria-hidden="true"></div>
-<div class="bg-grain" aria-hidden="true"></div>
 
 <a class="skip-link" href="#main">Aller au contenu</a>
 
@@ -47,8 +48,9 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a href="#top" class="logo" aria-label="Eloi Dupasquier — accueil">
-      <span class="logo-mark" aria-hidden="true">&rsaquo;_</span>
-      <span class="logo-text">eloi<span class="dim">.</span>dupasquier</span>
+      <span class="logo-mark" aria-hidden="true">ed</span>
+      <span class="logo-text">Eloi Dupasquier</span>
+      <span class="logo-tag">EI · Développeur web</span>
     </a>
 
     <nav class="nav" id="nav" aria-label="Navigation principale">
@@ -69,162 +71,112 @@
 <main id="main">
   <!-- ============ HERO ============ -->
   <section class="hero wrap" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <p class="eyebrow reveal">
-        <span class="status-dot" aria-hidden="true"></span>
-        Disponible pour de nouveaux projets
-      </p>
+    <p class="eyebrow reveal">
+      <span class="status-dot" aria-hidden="true"></span>
+      Disponible pour de nouveaux projets
+    </p>
 
-      <h1 id="hero-title" class="reveal">
-        Je conçois des sites web
-        <span class="accent">sur mesure</span>,
-        du premier pixel à la mise en ligne.<span class="caret" aria-hidden="true"></span>
-      </h1>
+    <h1 id="hero-title" class="reveal">
+      Des sites web sur mesure.
+      <span class="dim">Du premier pixel à la mise en ligne.</span>
+    </h1>
 
-      <p class="hero-sub reveal">
+    <div class="hero-row reveal">
+      <p class="hero-sub">
         Développeur web freelance basé à Belfort, j'accompagne artisans,
         indépendants et petites entreprises pour créer des sites modernes,
         rapides et pensés pour durer — sans template générique.
       </p>
-
-      <div class="hero-actions reveal">
+      <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Démarrer un projet <span aria-hidden="true">→</span></a>
-        <a href="#services" class="btn btn-ghost">Voir mes services</a>
-      </div>
-
-      <ul class="hero-meta reveal" aria-label="Informations clés">
-        <li><span class="k">01</span> Développement front &amp; back</li>
-        <li><span class="k">02</span> Cahier des charges soigné</li>
-        <li><span class="k">03</span> Suivi après livraison</li>
-      </ul>
-    </div>
-
-    <!-- Terminal signature -->
-    <div class="terminal reveal" aria-hidden="true">
-      <div class="terminal-bar">
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        <span class="terminal-title">eloi@web — zsh</span>
-      </div>
-      <div class="terminal-body" id="term">
-        <p><span class="prompt">eloi@web</span> <span class="path">~</span> % whoami</p>
-        <p class="out">→ développeur web freelance</p>
-        <p><span class="prompt">eloi@web</span> <span class="path">~</span> % ls ./services</p>
-        <p class="out ls">
-          <span>sites-vitrines/</span><span>applications/</span>
-          <span>refonte/</span><span>maintenance/</span>
-        </p>
-        <p><span class="prompt">eloi@web</span> <span class="path">~</span> % cat mission.txt</p>
-        <p class="out">→ transformer une idée en site qui convertit</p>
-        <p class="term-live"><span class="prompt">eloi@web</span> <span class="path">~</span> % <span class="term-cursor"></span></p>
+        <a href="#realisations" class="btn btn-ghost">Voir les réalisations</a>
       </div>
     </div>
+
+    <dl class="facts reveal">
+      <div><dt>Basé à</dt><dd>Belfort, Franche-Comté</dd></div>
+      <div><dt>Réponse</dt><dd>Sous 24 à 48&nbsp;h</dd></div>
+      <div><dt>Premier échange</dt><dd>Gratuit, sans engagement</dd></div>
+      <div><dt>Après livraison</dt><dd>Suivi et maintenance</dd></div>
+    </dl>
   </section>
 
   <!-- ============ SERVICES ============ -->
   <section class="section wrap" id="services" aria-labelledby="services-title">
     <div class="section-head reveal">
-      <span class="section-index">// 01</span>
-      <h2 id="services-title">Services</h2>
+      <span class="section-index">Services / 04</span>
+      <h2 id="services-title">Ce que je construis pour vous.</h2>
       <p class="section-lead">
         De la simple présence en ligne à l'application web complète —
         je choisis les bons outils pour chaque projet, jamais l'inverse.
       </p>
     </div>
 
-    <ol class="services-list">
-      <li class="service reveal">
-        <span class="service-num">01</span>
-        <div class="service-body">
-          <div class="service-heading">
-            <h3>Sites vitrines</h3>
-            <span class="service-price">à partir de 500 €</span>
-          </div>
-          <p>
-            Présentez votre activité avec un site clair, élégant et pensé
-            pour transformer vos visiteurs en clients. Responsive, rapide,
-            optimisé pour le référencement.
-          </p>
-        </div>
-        <span class="service-arrow" aria-hidden="true">→</span>
+    <!-- `reveal` sur la grille entière : révélées une à une, les cartes
+         laisseraient voir le fond gris qui dessine les filets. -->
+    <ol class="services-grid reveal">
+      <li class="service">
+        <div class="service-top"><span class="service-num">01</span><span class="service-price">dès 500 €</span></div>
+        <h3>Sites vitrines</h3>
+        <p>
+          Présentez votre activité avec un site clair, élégant et pensé
+          pour transformer vos visiteurs en clients. Responsive, rapide,
+          optimisé pour le référencement.
+        </p>
       </li>
 
-      <li class="service reveal">
-        <span class="service-num">02</span>
-        <div class="service-body">
-          <div class="service-heading">
-            <h3>Applications web sur mesure</h3>
-            <span class="service-price">à partir de 1 200 €</span>
-          </div>
-          <p>
-            Un besoin spécifique ? Je développe des applications complètes,
-            du front au back — espace client, réservation, tableau de bord —
-            avec Vue.js, React et Node.js.
-          </p>
-        </div>
-        <span class="service-arrow" aria-hidden="true">→</span>
+      <li class="service">
+        <div class="service-top"><span class="service-num">02</span><span class="service-price">dès 1 200 €</span></div>
+        <h3>Applications web sur mesure</h3>
+        <p>
+          Un besoin spécifique ? Je développe des applications complètes,
+          du front au back — espace client, réservation, tableau de bord —
+          avec Vue.js, React et Node.js.
+        </p>
       </li>
 
-      <li class="service reveal">
-        <span class="service-num">03</span>
-        <div class="service-body">
-          <div class="service-heading">
-            <h3>Refonte &amp; modernisation</h3>
-            <span class="service-price">à partir de 400 €</span>
-          </div>
-          <p>
-            Votre site a pris de l'âge ? Je le repense entièrement pour le
-            rendre moderne, rapide et impeccable sur mobile comme sur ordinateur.
-          </p>
-        </div>
-        <span class="service-arrow" aria-hidden="true">→</span>
+      <li class="service">
+        <div class="service-top"><span class="service-num">03</span><span class="service-price">dès 400 €</span></div>
+        <h3>Refonte &amp; modernisation</h3>
+        <p>
+          Votre site a pris de l'âge ? Je le repense entièrement pour le
+          rendre moderne, rapide et impeccable sur mobile comme sur ordinateur.
+        </p>
       </li>
 
-      <li class="service reveal">
-        <span class="service-num">04</span>
-        <div class="service-body">
-          <div class="service-heading">
-            <h3>Maintenance &amp; évolutions</h3>
-            <span class="service-price">à partir de 25 €/mois</span>
-          </div>
-          <p>
-            Mises à jour, corrections, nouvelles fonctionnalités : je fais
-            vivre votre site dans la durée, pour qu'il reste sûr et performant.
-          </p>
-        </div>
-        <span class="service-arrow" aria-hidden="true">→</span>
+      <li class="service">
+        <div class="service-top"><span class="service-num">04</span><span class="service-price">dès 25 €/mois</span></div>
+        <h3>Maintenance &amp; évolutions</h3>
+        <p>
+          Mises à jour, corrections, nouvelles fonctionnalités : je fais
+          vivre votre site dans la durée, pour qu'il reste sûr et performant.
+        </p>
       </li>
-      <li class="service reveal">
-        <span class="service-num">05</span>
-        <div class="service-body">
-          <div class="service-heading">
-            <h3><a href="gestion.html">Gestion — le tableau de bord des micro-entrepreneurs</a></h3>
-            <span class="service-price">à partir de 15 €/mois</span>
-          </div>
-          <p>
-            Devis, factures, encaissements et montant à déclarer à l'URSSAF
-            dans une application installable sur iPhone. Démo en ligne,
-            accès sur invitation.
-          </p>
-        </div>
-        <span class="service-arrow" aria-hidden="true">→</span>
+      <li class="service service-wide">
+        <div class="service-top"><span class="service-num">05</span><span class="service-price">dès 15 €/mois</span></div>
+        <h3><a href="gestion.html">Gestion — le tableau de bord des micro-entrepreneurs <span aria-hidden="true">→</span></a></h3>
+        <p>
+          Devis, factures, encaissements et montant à déclarer à l'URSSAF
+          dans une application installable sur iPhone. Démo en ligne,
+          accès sur invitation.
+        </p>
       </li>
     </ol>
 
     <p class="pricing-note reveal">
-      * Tarifs prévisionnels donnés à titre indicatif. Le tarif définitif
-      est communiqué après établissement d'un devis, sur la base de votre
-      cahier des charges.
+      Tarifs prévisionnels donnés à titre indicatif. Le tarif définitif est
+      communiqué après établissement d'un devis, sur la base de votre cahier
+      des charges. TVA non applicable, art. 293 B du CGI.
     </p>
   </section>
 
   <!-- ============ APPROCHE ============ -->
   <section class="section wrap" id="approche" aria-labelledby="approche-title">
     <div class="section-head reveal">
-      <span class="section-index">// 02</span>
-      <h2 id="approche-title">Ma façon de travailler</h2>
+      <span class="section-index">Approche</span>
+      <h2 id="approche-title">Une méthode simple et transparente.</h2>
       <p class="section-lead">
-        Une méthode simple et transparente. Vous savez à chaque étape
-        où en est votre projet — sans jargon inutile.
+        Vous savez à chaque étape où en est votre projet — sans jargon inutile.
       </p>
     </div>
 
@@ -260,7 +212,7 @@
   <!-- ============ STACK ============ -->
   <section class="section wrap" id="stack" aria-labelledby="stack-title">
     <div class="section-head reveal">
-      <span class="section-index">// 03</span>
+      <span class="section-index">Technologies</span>
       <h2 id="stack-title">Sous le capot</h2>
       <p class="section-lead">
         Je choisis les outils en fonction du projet, jamais l'inverse — avec
@@ -269,7 +221,6 @@
     </div>
 
     <div class="stack-line reveal">
-      <span class="stack-prompt">$ stack --print</span>
       <p>
         JavaScript <span class="sep">·</span> Vue.js <span class="sep">·</span> React
         <span class="sep">·</span> Node.js <span class="sep">·</span> PHP
@@ -281,8 +232,8 @@
   <!-- ============ RÉALISATIONS ============ -->
   <section class="section wrap" id="realisations" aria-labelledby="realisations-title">
     <div class="section-head reveal">
-      <span class="section-index">// 04</span>
-      <h2 id="realisations-title">Réalisations</h2>
+      <span class="section-index">Réalisations</span>
+      <h2 id="realisations-title">Des enseignes fictives. Un travail bien réel.</h2>
       <p class="section-lead">
         Trois sites pensés pour des commerces de proximité — une boulangerie,
         un garage, un salon. Ce sont des projets de démonstration : les
@@ -292,6 +243,9 @@
 
     <div class="projects">
       <article class="project reveal">
+        <div class="project-cover cover-leonard" aria-hidden="true">
+          Maison Léonard<small>Boulangerie</small>
+        </div>
         <div class="project-top">
           <span class="project-tag">Démo — page unique</span>
           <span class="project-year">2026</span>
@@ -310,6 +264,9 @@
       </article>
 
       <article class="project reveal">
+        <div class="project-cover cover-vaillant" aria-hidden="true">
+          Garage Vaillant<small>Mécanique</small>
+        </div>
         <div class="project-top">
           <span class="project-tag">Démo — page unique</span>
           <span class="project-year">2026</span>
@@ -328,6 +285,9 @@
       </article>
 
       <article class="project reveal">
+        <div class="project-cover cover-racine" aria-hidden="true">
+          Racine<small>Salon de coiffure</small>
+        </div>
         <div class="project-top">
           <span class="project-tag">Démo — 4 pages</span>
           <span class="project-year">2026</span>
@@ -343,19 +303,6 @@
         <a href="https://el0i-d.github.io/salon-racine/" class="project-link"
            target="_blank" rel="noopener">Voir le site <span aria-hidden="true">&rarr;</span></a>
       </article>
-
-      <article class="project project-cta reveal">
-        <div class="project-top">
-          <span class="project-tag">Votre projet</span>
-          <span class="project-year">2026</span>
-        </div>
-        <h3>Cet emplacement vous attend</h3>
-        <p>
-          Vous avez un projet de site ou d'application ?
-          Discutons-en et donnons-lui vie.
-        </p>
-        <a href="#contact" class="project-link">Me contacter <span aria-hidden="true">&rarr;</span></a>
-      </article>
     </div>
 
     <p class="projects-plus reveal">
@@ -368,19 +315,18 @@
   <section class="section wrap" id="apropos" aria-labelledby="apropos-title">
     <div class="about-grid">
       <div class="about-copy reveal">
-        <span class="section-index">// 05</span>
-        <h2 id="apropos-title">À propos</h2>
+        <span class="section-index">À propos</span>
+        <h2 id="apropos-title" class="statement">
+          Un bon site n'est pas celui qui impressionne.
+          <span>C'est celui qui sert vraiment votre activité : clair pour vos
+          visiteurs, simple à faire évoluer.</span>
+        </h2>
         <p>
-          Je m'appelle <strong>Eloi Dupasquier</strong>. Pour moi, un bon site
-          n'est pas celui qui impressionne — c'est celui qui sert vraiment
-          votre activité : clair pour vos visiteurs, simple à faire évoluer,
-          et sans fioritures inutiles.
-        </p>
-        <p>
-          Je préfère prendre le temps de bien comprendre un besoin plutôt que
-          d'empiler des fonctionnalités. Chaque projet est pensé du premier
-          échange jusqu'à la mise en ligne, avec la même exigence de
-          finition, du code jusqu'au moindre détail visible.
+          Je m'appelle <strong>Eloi Dupasquier</strong>. Je préfère prendre le
+          temps de bien comprendre un besoin plutôt que d'empiler des
+          fonctionnalités. Chaque projet est pensé du premier échange jusqu'à
+          la mise en ligne, avec la même exigence de finition, du code
+          jusqu'au moindre détail visible.
         </p>
         <p>
           En dehors du code, je joue de la guitare et je m'entraîne
@@ -394,7 +340,7 @@
           <ul>
             <li><span class="k">Basé à</span> Belfort &amp; alentours</li>
             <li><span class="k">Zone</span> Sur place ou à distance</li>
-            <li><span class="k">Statut</span> Micro-entreprise</li>
+            <li><span class="k">Statut</span> Entrepreneur individuel</li>
           </ul>
         </div>
       </aside>
@@ -405,21 +351,19 @@
   <section class="section wrap" id="contact" aria-labelledby="contact-title">
     <div class="contact-grid">
       <div class="contact-copy reveal">
-        <span class="section-index">// 06</span>
-        <h2 id="contact-title">Un projet en tête&nbsp;?</h2>
+        <span class="section-index">Contact</span>
+        <h2 id="contact-title">Parlons de votre projet.</h2>
         <p class="section-lead">
           Décrivez-moi votre besoin en quelques lignes. Je vous réponds
           sous 24 à 48&nbsp;h avec un premier avis, honnête et sans engagement.
         </p>
 
+        <a class="contact-mail" href="mailto:eloi.dupasquier@proton.me">eloi.dupasquier@proton.me</a>
+
         <ul class="contact-direct">
           <li>
             <span class="k">Téléphone</span>
             <a href="tel:+33767259876">07 67 25 98 76</a>
-          </li>
-          <li>
-            <span class="k">Email</span>
-            <a href="mailto:eloi.dupasquier@proton.me">eloi.dupasquier@proton.me</a>
           </li>
           <li>
             <span class="k">GitHub</span>
@@ -483,8 +427,9 @@
   <div class="wrap footer-inner">
     <div class="footer-brand">
       <a href="#top" class="logo">
-        <span class="logo-mark" aria-hidden="true">&rsaquo;_</span>
-        <span class="logo-text">eloi<span class="dim">.</span>dupasquier</span>
+        <span class="logo-mark" aria-hidden="true">ed</span>
+        <span class="logo-text">Eloi Dupasquier</span>
+        <span class="logo-tag">EI · Développeur web</span>
       </a>
       <p>Développeur web freelance — sites &amp; applications sur mesure.</p>
     </div>
@@ -499,7 +444,7 @@
     </nav>
 
     <div class="footer-legal">
-      <p>Eloi Dupasquier · Micro-entreprise</p>
+      <p>Eloi Dupasquier EI · Micro-entreprise</p>
       <p class="dim">
         <a href="mentions-legales.html" class="dim-link">Mentions légales</a> ·
         <a href="confidentialite.html" class="dim-link">Confidentialité</a>

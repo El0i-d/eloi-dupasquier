@@ -56,6 +56,63 @@
         ],
         "createdAt": "2026-09-30T17:21:55.406Z",
         "reason": "Faux positif: le grain est un data: URI SVG feTurbulence inline, aucun fichier n'est livre, donc le cout que la regle vise n'existe pas. opacity 0.04 + mix-blend-mode overlay, texture d'ambiance voulue."
+      },
+      {
+        "rule": "overused-font",
+        "value": "fraunces",
+        "createdAt": "2026-10-24T21:11:25.499Z",
+        "reason": "Faux positif: Fraunces sert uniquement a la vignette Maison Leonard, qui reprend la police reelle de la demo demos/boulangerie.html (sous-ensemble text= de quelques glyphes)."
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "createdAt": "2026-10-24T21:11:25.950Z",
+        "reason": "Choix valide: l'utilisateur a retenu la direction B Nocturne du canvas, presentee avec Instrument Sans."
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-24T21:11:26.368Z",
+        "reason": "Faux positif: les 35 caracteres sont l'etiquette courte 'Disponible pour de nouveaux projets' (eyebrow mono 12 px), pas un paragraphe; deja en capitales sur l'ancien site."
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-24T21:11:26.799Z",
+        "reason": "Intentionnel: 1.18 est l'interligne du titre d'accroche .statement (28-44 px) de la section A propos, pas du texte courant (corps a 1.6)."
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "gestion.html"
+        ],
+        "createdAt": "2026-10-24T21:18:42.198Z",
+        "reason": "Faux positif: le detecteur suppose un fond blanc. Mesure DOM reelle sur fond effectif (--bg #0b0b0c): 0 texte sous le seuil WCAG AA sur gestion.html."
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "gestion.html"
+        ],
+        "createdAt": "2026-10-24T21:19:17.212Z",
+        "reason": "Faux positif: les 42 caracteres sont l'etiquette courte 'Acces sur invitation · demo ouverte a tous' (eyebrow mono 12 px), pas un paragraphe."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "gestion.html"
+        ],
+        "createdAt": "2026-10-24T21:19:17.704Z",
+        "reason": "Faux positif: l'inset est porte ailleurs. .about-grid a padding-top clamp(3rem,6vw,5rem) sous son filet (>= 48 px, verifie en capture); les li de .projects-limites ont 20 px de padding-block au-dessus du filet bas."
       }
     ]
   }
