@@ -1014,3 +1014,20 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
 }
 .projects-plus a span { display: inline-block; transition: transform 0.2s ease; }
 .projects-plus a:hover span { transform: translateX(4px); }
+
+/* ---------- Page Gestion : limites ---------- */
+.projects-limites {
+  display: grid;
+  gap: 1rem;
+  max-width: 62ch;
+}
+.projects-limites li {
+  color: var(--muted);
+  font-size: 0.94rem;
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--accent-dim);
+}
+.projects-limites strong { color: var(--text); }
+
+/* Lien dans un titre de service : toute la ligne reste lisible. */
+.service-body h3 a:hover { color: var(--accent); }

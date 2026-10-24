@@ -89,6 +89,12 @@
   const note = document.getElementById("formNote");
 
   if (form) {
+    // Lien « Demander un accès » de la page Gestion : ?sujet=gestion
+    // présélectionne le type de projet.
+    if (new URLSearchParams(location.search).get("sujet") === "gestion") {
+      const type = form.querySelector("#cf-type");
+      if (type) type.value = "Gestion";
+    }
     const submitBtn = form.querySelector("button[type='submit']");
 
     form.addEventListener("submit", async (e) => {
