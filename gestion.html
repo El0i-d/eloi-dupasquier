@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gestion — le tableau de bord des micro-entrepreneurs — Eloi Dupasquier</title>
+<meta
+  name="description"
+  content="Devis, factures, encaissements, déclaration URSSAF : une application de gestion pour micro-entrepreneurs, installable sur iPhone, avec vos données hébergées en Europe. Démo en ligne."
+/>
+<meta name="author" content="Eloi Dupasquier" />
+<meta name="theme-color" content="#0c0d10" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Gestion — le tableau de bord des micro-entrepreneurs" />
+<meta
+  property="og:description"
+  content="Devis, factures, encaissements et URSSAF dans une seule application, installable sur iPhone. Essayez la démo."
+/>
+<meta property="og:locale" content="fr_FR" />
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="styles.css" />
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-grain" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<span id="top" aria-hidden="true"></span>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo" aria-label="Eloi Dupasquier — accueil">
+      <span class="logo-mark" aria-hidden="true">&rsaquo;_</span>
+      <span class="logo-text">eloi<span class="dim">.</span>dupasquier</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#approche">Approche</a>
+      <a href="realisations.html">Réalisations</a>
+      <a href="gestion.html" aria-current="page">Gestion</a>
+      <a href="index.html#contact" class="nav-cta">Démarrer un projet</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">
+        <span class="status-dot" aria-hidden="true"></span>
+        Accès sur invitation · démo ouverte à tous
+      </p>
+
+      <h1 id="hero-title" class="reveal">
+        Votre gestion de micro-entreprise,
+        <span class="accent">dans votre poche</span>.<span class="caret" aria-hidden="true"></span>
+      </h1>
+
+      <p class="hero-sub reveal">
+        Contacts, devis, factures, encaissements, montant à déclarer à
+        l'URSSAF : tout au même endroit, sur ordinateur comme sur iPhone.
+        Une application conçue pour les micro-entrepreneurs en franchise de
+        TVA, avec vos données hébergées en Europe.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="https://demo.edupasquier.me" class="btn btn-primary"
+           target="_blank" rel="noopener">Essayer la démo <span aria-hidden="true">→</span></a>
+        <a href="index.html?sujet=gestion#contact" class="btn btn-ghost">Demander un accès</a>
+      </div>
+
+      <ul class="hero-meta reveal" aria-label="Informations clés">
+        <li><span class="k">01</span> Installable comme une app</li>
+        <li><span class="k">02</span> Données hébergées en Allemagne</li>
+        <li><span class="k">03</span> Export complet à tout moment</li>
+      </ul>
+    </div>
+
+    <div class="terminal reveal" aria-hidden="true">
+      <div class="terminal-bar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="terminal-title">demo.edupasquier.me</span>
+      </div>
+      <div class="terminal-body">
+        <p><span class="prompt">gestion</span> <span class="path">~</span> % accueil</p>
+        <p class="out">→ CA encaissé 2026 : 3 140,00 €</p>
+        <p class="out">→ à déclarer URSSAF : 600,00 €</p>
+        <p class="out">→ 2 factures en retard</p>
+        <p class="out">→ 1 devis en attente</p>
+        <p><span class="prompt">gestion</span> <span class="path">~</span> % relances</p>
+        <p class="out">→ 1 facture à relancer</p>
+        <p class="term-live"><span class="prompt">gestion</span> <span class="path">~</span> % <span class="term-cursor"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FONCTIONNALITÉS ============ -->
+  <section class="section wrap" id="fonctions" aria-labelledby="fonctions-title">
+    <div class="section-head reveal">
+      <span class="section-index">// 01</span>
+      <h2 id="fonctions-title">Ce que ça fait</h2>
+      <p class="section-lead">
+        L'essentiel d'une micro-entreprise, sans usine à gaz : ce dont vous
+        avez besoin au quotidien, et rien de plus.
+      </p>
+    </div>
+
+    <div class="projects">
+      <article class="project reveal">
+        <div class="project-top"><span class="project-tag">Clients</span></div>
+        <h3>Contacts et relances</h3>
+        <p>
+          Prospects et clients au même endroit, avec un parcours de la
+          première prise de contact jusqu'à la vente. Un journal des échanges
+          et des dates de relance : le tableau de bord vous montre ce qui est
+          à faire aujourd'hui.
+        </p>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top"><span class="project-tag">Devis &amp; factures</span></div>
+        <h3>Du devis à la facture en un clic</h3>
+        <p>
+          Un catalogue de prestations, des devis en PDF, puis la facture :
+          acompte, solde ou totalité. La numérotation est continue et sans
+          trou, une facture émise ne peut plus être modifiée, et une erreur se
+          corrige par un avoir.
+        </p>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top"><span class="project-tag">Encaissements</span></div>
+        <h3>Le chiffre d'affaires, à l'encaissement</h3>
+        <p>
+          Comme le veut le régime micro : votre CA se compte sur les paiements
+          reçus. Livre des recettes, jauges du seuil de franchise de TVA et du
+          plafond micro, export pour Excel.
+        </p>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top"><span class="project-tag">URSSAF</span></div>
+        <h3>Votre déclaration, prête à recopier</h3>
+        <p>
+          Le montant à déclarer pour le mois ou le trimestre en cours, les
+          cotisations estimées, et l'historique de vos déclarations passées.
+          Un rappel vous prévient avant la date limite.
+        </p>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top"><span class="project-tag">Trésorerie</span></div>
+        <h3>Relances et factures récurrentes</h3>
+        <p>
+          Trois niveaux de relance de paiement avec des messages déjà
+          rédigés, et une facturation automatique pour vos abonnements
+          (maintenance mensuelle, par exemple).
+        </p>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top"><span class="project-tag">Mobile</span></div>
+        <h3>Une vraie app sur iPhone</h3>
+        <p>
+          Ajoutez-la à l'écran d'accueil : elle s'ouvre en plein écran,
+          se déverrouille avec Face ID et vous envoie une notification le
+          matin quand quelque chose demande votre attention. Sans passer par
+          l'App Store.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ DONNÉES ============ -->
+  <section class="section wrap" id="donnees" aria-labelledby="donnees-title">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <span class="section-index">// 02</span>
+        <h2 id="donnees-title">Vos données restent les vôtres</h2>
+        <p>
+          Vos clients et vos factures sont des données sensibles, et vous
+          devez conserver vos factures dix ans. Chaque entreprise a donc sa
+          <strong>propre base de données</strong>, séparée des autres, sur un
+          serveur situé en Allemagne. Aucun service publicitaire, aucun
+          traceur, aucune police chargée depuis l'extérieur.
+        </p>
+        <p>
+          Vous pouvez <strong>tout récupérer à tout moment</strong> : une
+          archive avec toutes vos factures en PDF et vos tableaux lisibles
+          directement dans Excel ou Numbers. Si vous le souhaitez, l'application
+          en dépose chaque nuit une copie sur votre propre Google Drive.
+        </p>
+        <p>
+          Des sauvegardes chiffrées sont faites chaque nuit, et vous pouvez
+          faire supprimer votre espace et toutes ses données à tout moment.
+        </p>
+      </div>
+
+      <aside class="about-facts reveal" aria-label="En bref">
+        <div class="fact-card">
+          <ul>
+            <li><span class="k">Hébergé</span> Allemagne (Union européenne)</li>
+            <li><span class="k">Base</span> Une par entreprise, isolée</li>
+            <li><span class="k">Copies</span> Sauvegarde chiffrée chaque nuit</li>
+            <li><span class="k">Export</span> PDF + tableaux, à tout moment</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ DÉMARRER ============ -->
+  <section class="section wrap" id="demarrer" aria-labelledby="demarrer-title">
+    <div class="section-head reveal">
+      <span class="section-index">// 03</span>
+      <h2 id="demarrer-title">Comment démarrer</h2>
+      <p class="section-lead">
+        L'accès se fait sur invitation, pour que je puisse prendre le temps
+        de vous accompagner. Quelques minutes suffisent pour être prêt à facturer.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step-num">01</span>
+        <h3>Essai</h3>
+        <p>Vous testez la démo, sans inscription, avec des données fictives. On échange ensuite sur vos besoins.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">02</span>
+        <h3>Invitation</h3>
+        <p>Je vous envoie un lien personnel. Vous choisissez vous-même votre e-mail et votre mot de passe.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">03</span>
+        <h3>Assistant</h3>
+        <p>Votre SIRET remplit le nom et l'adresse de l'entreprise. Vous ajoutez votre IBAN, votre logo, et c'est prêt.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">04</span>
+        <h3>Vous facturez</h3>
+        <p>Installation sur l'écran d'accueil de votre iPhone, Face ID, et première facture dans la foulée.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ TARIF ============ -->
+  <section class="section wrap" id="tarif" aria-labelledby="tarif-title">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <span class="section-index">// 04</span>
+        <h2 id="tarif-title">Tarif</h2>
+        <p>
+          Une mise en service, puis un abonnement mensuel qui comprend
+          l'hébergement, les sauvegardes, les mises à jour (y compris les
+          évolutions légales) et le support. Sans engagement de durée.
+        </p>
+        <p>
+          Vous avez un besoin particulier, ou vous voulez que je reprenne
+          vos données existantes ? Ces options se chiffrent à part, sur devis.
+        </p>
+        <p class="pricing-note">
+          * Tarifs prévisionnels donnés à titre indicatif. Le tarif définitif
+          figure sur le devis qui vous est remis avant tout engagement.
+        </p>
+      </div>
+
+      <aside class="about-facts reveal" aria-label="Tarifs">
+        <div class="fact-card">
+          <ul>
+            <li><span class="k">Mise en service</span> à partir de 150 €</li>
+            <li><span class="k">Abonnement</span> à partir de 15 € / mois</li>
+            <li><span class="k">Inclus</span> Hébergement, sauvegardes, mises à jour, support</li>
+            <li><span class="k">TVA</span> Non applicable, art. 293 B du CGI</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ LIMITES ============ -->
+  <section class="section wrap" id="limites" aria-labelledby="limites-title">
+    <div class="section-head reveal">
+      <span class="section-index">// 05</span>
+      <h2 id="limites-title">Ce que ça ne fait pas (encore)</h2>
+      <p class="section-lead">
+        Mieux vaut le savoir avant de vous engager.
+      </p>
+    </div>
+
+    <ul class="projects-limites reveal">
+      <li>
+        <strong>La TVA.</strong> L'application est faite pour les
+        micro-entrepreneurs en franchise de TVA : elle n'en facture pas.
+      </li>
+      <li>
+        <strong>L'envoi automatique par e-mail.</strong> Vous envoyez vos
+        factures vous-même, depuis votre vraie boîte mail, en un geste : le
+        PDF est déjà prêt et le message déjà rédigé.
+      </li>
+      <li>
+        <strong>La facture électronique.</strong> Elle devient obligatoire
+        pour les micro-entreprises au 1<sup>er</sup> septembre 2027. Son
+        intégration (Factur-X, plateforme agréée) est prévue avant cette date.
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section wrap" aria-labelledby="cta-title">
+    <article class="project project-cta reveal">
+      <div class="project-top">
+        <span class="project-tag">Démo ouverte à tous</span>
+      </div>
+      <h3 id="cta-title">Voyez-la fonctionner</h3>
+      <p>
+        La démo est un espace fictif, sans inscription : parcourez les
+        devis, les factures et le tableau de bord. Ses données sont effacées
+        chaque nuit.
+      </p>
+      <div class="hero-actions">
+        <a href="https://demo.edupasquier.me" class="btn btn-primary"
+           target="_blank" rel="noopener">Essayer la démo <span aria-hidden="true">→</span></a>
+        <a href="index.html?sujet=gestion#contact" class="btn btn-ghost">Demander un accès</a>
+      </div>
+    </article>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-mark" aria-hidden="true">&rsaquo;_</span>
+        <span class="logo-text">eloi<span class="dim">.</span>dupasquier</span>
+      </a>
+      <p>Développeur web freelance — sites &amp; applications sur mesure.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Navigation pied de page">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#approche">Approche</a>
+      <a href="realisations.html">Réalisations</a>
+      <a href="gestion.html">Gestion</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="footer-legal">
+      <p>Eloi Dupasquier · Micro-entreprise</p>
+      <p class="dim">
+        <a href="mentions-legales.html" class="dim-link">Mentions légales</a> ·
+        <a href="confidentialite.html" class="dim-link">Confidentialité</a>
+      </p>
+      <p class="dim">© <span id="year">2026</span> — Conçu &amp; développé maison.</p>
+    </div>
+  </div>
+  <a href="#top" class="to-top" aria-label="Revenir en haut">↑</a>
+</footer>
+
+<script src="script.js"></script>
+</html>

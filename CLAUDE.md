@@ -70,10 +70,13 @@ copie-la telle quelle dans le `CLAUDE.md` de tout nouveau projet (ou dans
 - Direction artistique : « terminal raffiné » — fond sombre, monospace
   (IBM Plex Mono / Space Mono), accent lime `#c6f24e`. Tous les tokens sont
   dans `:root` en haut de `styles.css`.
-- Pages : `index.html`, `realisations.html`, `mentions-legales.html`,
-  `confidentialite.html`, démos fictives dans `demos/`.
+- Pages : `index.html`, `realisations.html`, `gestion.html` (page produit du
+  dashboard : démo `demo.edupasquier.me`, accès sur invitation, tarif
+  indicatif), `mentions-legales.html`, `confidentialite.html`, démos
+  fictives dans `demos/`.
 - Tarifs affichés (indicatifs) : site vitrine dès 500 €, application sur
-  mesure dès 1 200 €, refonte dès 400 €, maintenance dès 25 €/mois.
+  mesure dès 1 200 €, refonte dès 400 €, maintenance dès 25 €/mois, dashboard Gestion dès 15 €/mois (mise en
+  service dès 150 €).
 - Formulaire de contact : Web3Forms (clé publique dans `index.html`).
 - Lancer en local : `python -m http.server 8000`.
 - `_config.yml` exclut les fichiers internes (`CLAUDE.md`, `README.md`,
